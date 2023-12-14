@@ -3,7 +3,7 @@ const Video = () => {
     <section>
         <iframe 
             width="100%" 
-            height="500vh" 
+            height="600vh" 
             src="https://www.youtube.com/embed/d1VN6h8m498?si=ZWOSJetKZnenQwg6" 
             title="YouTube video player" 
             frameBorder="0" 

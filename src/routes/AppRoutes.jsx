@@ -7,6 +7,10 @@ import Login from "../pages/Login"
 import Register from "../pages/Register"
 import Profile from "../pages/Profile"
 
+import ProductList from "../pages/ProductList"
+import ProductItem from "../pages/ProductItem"
+import Checkout from "../pages/Checkout"
+
 const AppRoutes = () => {
     return (
         <>
@@ -16,9 +20,9 @@ const AppRoutes = () => {
                     <Route path="/login" element={<Login />} />
                     <Route path="/register" element={<Register />} />
                     <Route path="/profile" element={<Profile />} />
-                    {/* <Route path="/products" element={<ProductList />} />
-                    <Route path="/products/:productID" element={<ProductItem />} />
-                    <Route path="/checkout" element={<Checkout />} /> */}
+                    <Route path="/products/:category" element={<ProductList />} />
+                    <Route path="/products/:category/:productID" element={<ProductItem />} />
+                    <Route path="/checkout" element={<Checkout />} />
                     <Route path="*" element={<ErrorPage />} />
                 </Route>
             </Routes>

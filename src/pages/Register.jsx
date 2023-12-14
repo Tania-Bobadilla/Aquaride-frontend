@@ -1,6 +1,7 @@
-import { Button, Col, Container, NavLink, Row } from "react-bootstrap"
+import { Button, Card, Col, Container, Row } from "react-bootstrap"
 import img from "../assets/image-12x.jpg"
 import FormRegister from "../components/FormRegister.jsx"
+import { NavLink } from "react-router-dom"
 
 const Register = () => {
   return (
@@ -12,14 +13,18 @@ const Register = () => {
           </Col>
           <Col sm={6} className="info">
             <h2>Registro</h2>
-            <FormRegister />
-            <hr />
-            <p>¿Ya tienes una cuenta? Ingresa aquí.</p>
-            <NavLink to="/"><Button variant="outline-secondary">Login</Button></NavLink>
+            <Card>
+              <Card.Body>
+                <FormRegister />
+              </Card.Body>
+              <Card.Footer>
+                <p>¿Ya tienes cuenta? Ingresa aquí.</p>
+                <NavLink to="/login"><Button variant="outline-secondary">Login</Button></NavLink>
+              </Card.Footer>
+            </Card>
           </Col>
         </Row>
       </Container>
-      {/*  */}
     </main>
   )
 }

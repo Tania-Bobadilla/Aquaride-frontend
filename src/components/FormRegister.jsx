@@ -1,35 +1,37 @@
-import { Button } from "react-bootstrap"
+import { Button, Col, Row } from "react-bootstrap"
 
 const FormRegister = () => {
     return (
         <form className="form-register">
-            <div className='mb-3'>
-                <label htmlFor="name">
-                    <strong>Nombre</strong>
-                </label>
-                <input
-                    type="text"
-                    placeholder='Nombre'
-                    autoComplete='off'
-                    name='name'
-                    className='form-control rounded-0'
+            <Row>
+                <Col className='mb-3'>
+                    <label htmlFor="name">
+                        <strong>Nombre</strong>
+                    </label>
+                    <input
+                        type="text"
+                        placeholder='Nombre'
+                        autoComplete='off'
+                        name='name'
+                        className='form-control rounded-1'
                     // onChange={}
-                />
-            </div>
-            <div className='mb-3'>
-                <label htmlFor="lastname">
-                    <strong>Apellido</strong>
-                </label>
-                <input
-                    type="text"
-                    placeholder='Apellido'
-                    autoComplete='off'
-                    name='lastname'
-                    className='form-control rounded-0'
+                    />
+                </Col>
+                <Col className='mb-3'>
+                    <label htmlFor="lastname">
+                        <strong>Apellido</strong>
+                    </label>
+                    <input
+                        type="text"
+                        placeholder='Apellido'
+                        autoComplete='off'
+                        name='lastname'
+                        className='form-control rounded-1'
                     // onChange={}
-                />
-            </div>
-            <div className='mb-3'>
+                    />
+                </Col>
+            </Row>
+            <Col className='mb-3'>
                 <label htmlFor="email">
                     <strong>Email</strong>
                 </label>
@@ -38,11 +40,11 @@ const FormRegister = () => {
                     placeholder='Email'
                     autoComplete='off'
                     name='email'
-                    className='form-control rounded-0'
-                    // onChange={}
+                    className='form-control rounded-1'
+                // onChange={}
                 />
-            </div>
-            <div className='mb-3'>
+            </Col>
+            <Col className='mb-3'>
                 <label htmlFor="password">
                     <strong>Contraseña</strong>
                 </label>
@@ -50,10 +52,10 @@ const FormRegister = () => {
                     type="password"
                     placeholder='Contraseña'
                     name='password'
-                    className='form-control rounded-0'
-                    // onChange={}
+                    className='form-control rounded-1'
+                // onChange={}
                 />
-            </div>
+            </Col>
             <Button type='submit'>Registrarse</Button>
         </form >
     )
