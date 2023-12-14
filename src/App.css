@@ -156,6 +156,63 @@ footer a:hover {
     color: #FFFFFF
 }
 /*--------------------------------------------------------*/
+/*REGISTER*/
+.register img {
+    width: 100%;
+    height: 70vh;
+}
+.register .register-img {
+    padding: 0;
+}
+.register .info {
+    padding: 30px;
+}
+.register h2 {
+    font-size: 46px;
+    font-weight: 900;
+    text-transform: uppercase;
+    text-align: left;
+    color: #275E63;
+}
+.register button {
+    width: 20%;
+}
+.register .btn-outline-secondary {
+    border: #275E63 1px solid;
+    color: #275E63;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+.register .btn-outline-secondary:hover {
+    background-color: #275E63;
+    color: #FFFFFF;
+}
+/*FORM*/
+.form-register {
+    text-align: left;
+}
+.form-register .mb-3  {
+    color: #275E63;
+    text-align: left;
+}
+.form-register input {
+    text-align: left;
+    border: #275E63 1 px solid;
+    border-radius: 5px;
+}
+.form-register .mb-3 input::placeholder  {
+    text-align: left;
+}
+.form-register .btn-primary {
+    background-color: #275E63;
+    border: #275E63 1px solid;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+.form-register .btn-primary:hover {
+    background-color: rgb(15, 63, 66);;
+}
+/*--------------------------------------------------------*/
 /*CARD PRODUCT*/
 .card-prod .card {
     width: 18rem;   
