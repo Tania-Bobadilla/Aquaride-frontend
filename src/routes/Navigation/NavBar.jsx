@@ -1,6 +1,6 @@
 import { Button, Nav, Navbar } from "react-bootstrap"
 import { NavLink } from "react-router-dom"
-import logo from '../../assets/Default.png'
+import logo from '../../assets/logo-dark.png'
 
 import AccountCircleIcon from '@mui/icons-material/AccountCircle'
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart'
@@ -18,7 +18,7 @@ const NavBar = () => {
           </Nav>
 
           <Nav className="me-auto">
-            <Nav.Link as={NavLink} to="">Categoria</Nav.Link>
+            <Nav.Link as={NavLink} to="/products/mujer">Categoria</Nav.Link>
             <Nav.Link as={NavLink} to="">Categoria</Nav.Link>
             <Nav.Link as={NavLink} to="">Categoria</Nav.Link>
             <Nav.Link as={NavLink} to="">Categoria</Nav.Link>

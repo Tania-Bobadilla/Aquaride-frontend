@@ -1,5 +1,5 @@
 import { Button, Card, Col, Container, Row } from "react-bootstrap"
-import img from "../assets/image-12x.jpg"
+import img from "../assets/register.jpg"
 import FormRegister from "../components/FormRegister.jsx"
 import { NavLink } from "react-router-dom"
 

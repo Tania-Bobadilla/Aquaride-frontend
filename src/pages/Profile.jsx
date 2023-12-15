@@ -25,6 +25,7 @@ const Profile = () => {
                     name='name'
                     className='form-control rounded-1'
                     disabled={true}
+                  // value={}  
                   // onChange={}
                   />
                 </Col>
@@ -39,6 +40,7 @@ const Profile = () => {
                     name='lastname'
                     className='form-control rounded-1'
                     disabled={true}
+                  //  value={}
                   // onChange={}
                   />
                 </Col>
@@ -54,12 +56,16 @@ const Profile = () => {
                   name='email'
                   className='form-control rounded-1'
                   disabled={true}
+                //  value={}
                 // onChange={}
                 />
               </Col>
             </form>
             <Button className="btn-edit">Editar datos</Button>
-            <Button className="btn-save">Guardar cambios</Button>
+            <Button className="btn-save">Guardar cambios</Button><hr />
+            <div className="wrapper">
+              <Button variant="outline-secondary" size="sm">Cerrar sesión</Button>
+            </div>
           </Col>
         </Row>
       </Container>

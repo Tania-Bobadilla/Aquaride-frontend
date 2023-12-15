@@ -4,7 +4,7 @@ import CardProd from "../CardProd"
 const Destacado = () => {
     return (
         <section className="destacados">
-            <h2>Titulo</h2>
+            <h2>Destacados</h2>
             <Carousel data-bs-theme="dark">
                 <Carousel.Item>
                     <Row>
