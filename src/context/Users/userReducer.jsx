@@ -14,6 +14,26 @@ const userReducer = (state, action) => {
                     password: ""
                 }]
             }
+
+        case "REGISTER/LOGIN":
+            localStorage.setItem("token", payload)
+            return {
+                ...state,
+                authStatus: true
+            }
+        case "INFO_USER":
+            return {
+                ...state,
+                infoUser: payload,
+                authStatus: true
+            }
+        case "SIGN_OUT":
+            localStorage.removeItem("token")
+            return {
+                ...state,
+                infoUser: [],
+                authStatus: false
+            }
     
         default:
             return state

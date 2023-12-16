@@ -5,7 +5,12 @@ import logo from '../../assets/logo-dark.png'
 import AccountCircleIcon from '@mui/icons-material/AccountCircle'
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart'
 
+import { useContext } from "react"
+import UserContext from "../../context/Users/UserContext"
+
 const NavBar = () => {
+  const { infoUser, authStatus } = useContext(UserContext)
+  const { name } = infoUser
   return (
     <header>
       <Navbar collapseOnSelect expand="lg">
@@ -18,7 +23,7 @@ const NavBar = () => {
           </Nav>
 
           <Nav className="me-auto">
-            <Nav.Link as={NavLink} to="/products/mujer">Categoria</Nav.Link>
+            <Nav.Link as={NavLink} to="/test">Categoria</Nav.Link>
             <Nav.Link as={NavLink} to="">Categoria</Nav.Link>
             <Nav.Link as={NavLink} to="">Categoria</Nav.Link>
             <Nav.Link as={NavLink} to="">Categoria</Nav.Link>
@@ -27,8 +32,9 @@ const NavBar = () => {
 
           <Nav>
             <Nav.Link as={NavLink} to="/checkout" className="auth">{<ShoppingCartIcon />}</Nav.Link>
-            <Nav.Link as={NavLink} to="/profile" className="auth">{<AccountCircleIcon />}</Nav.Link>
-            <Nav.Link as={NavLink} to="/login"><Button variant="outline-primary">Iniciar sesión</Button></Nav.Link>
+            {authStatus ? <Nav.Link as={NavLink} to="/profile" className="auth">{<AccountCircleIcon />} {name}</Nav.Link> : 
+              <Nav.Link as={NavLink} to="/auth"><Button variant="outline-primary">Iniciar sesión</Button></Nav.Link>
+            }
           </Nav>
         </Navbar.Collapse>
 
