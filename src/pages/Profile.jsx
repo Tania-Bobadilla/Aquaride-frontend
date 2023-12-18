@@ -1,11 +1,76 @@
-import { Button, Col, Container, Row } from "react-bootstrap"
+import { Button, Col, Container, Row, Card } from "react-bootstrap"
 import img from "../assets/image-12x.jpg"
 
+import { useContext, useEffect, useState } from "react"
+import UserContext from "../context/Users/UserContext"
+
 const Profile = () => {
+  const { infoUser, userEdit, signOut } = useContext(UserContext)
+  const { name, email } = infoUser
+  const [open, setOpen] = useState(false)
+  const [userForm, setUserForm] = useState({
+    name: "",
+    email
+  })
+
+  const handleChenage = async(e) => {
+    setUserForm({
+      ...userForm,
+      [e.target.name]: e.target.value
+    })
+  }
+
+  const sendData = () => {
+    userEdit(userForm)
+  }
+
+  useEffect(() => {
+    const updateData = () => {
+      return setUserForm({
+        ...userForm,
+        name,
+        email
+      })
+    }
+    updateData()
+  }, [])
+
+  const handleOpen = () => {
+    setOpen(!open)
+  }
+
+  console.log(name, email)
+
   return (
     <main className="profile">
-      <Container>
-        <h2>Nombre</h2>
+      <Card style={{ width: '18rem' }}>
+        <Card.Body>
+          <Card.Title>{`${name}`}</Card.Title>
+          <Card.Subtitle className="mb-2 text-muted">{email}</Card.Subtitle>
+          <Button onClick={handleOpen}>Edit User</Button>
+        </Card.Body>
+      </Card>
+      <form onSubmit={(e) => sendData(e)} style={ !open ? {display: "none"} : {display:"flex"}}>
+        <label htmlFor="name">Nombre</label>
+        <input 
+          type="text"
+          name="name"
+          id="name"
+          value={userForm.name}  
+          onChange={handleChenage}
+        />
+        <label htmlFor="email">Email</label>
+        <input 
+          type="email"
+          name="email"
+          id="email"
+          value={userForm.email}  
+          onChange={handleChenage}
+        />
+        <button type="submit">Guardar</button>
+      </form>
+      {/* <Container>
+        <h2>{`${name}`}</h2>
         <Row>
           <Col sm={3}>
             <img src={img} alt="" />
@@ -64,12 +129,12 @@ const Profile = () => {
             <Button className="btn-edit">Editar datos</Button>
             <Button className="btn-save">Guardar cambios</Button><hr />
             <div className="wrapper">
-              <Button variant="outline-secondary" size="sm">Cerrar sesión</Button>
+              <Button variant="outline-secondary" size="sm" onClick={signOut}>Cerrar sesión</Button>
             </div>
           </Col>
         </Row>
-      </Container>
-    </main>
+    </Container> */}
+    </main >
   )
 }
 

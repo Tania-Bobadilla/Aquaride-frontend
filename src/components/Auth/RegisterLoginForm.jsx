@@ -11,7 +11,7 @@ const RegisterLoginForm = () => {
     const [signUp, setSignUp] = useState(false)
 
     // "importar" la funcion de register
-    const { registerUser } = useContext(UserContext)
+    const { registerUser, loginUser } = useContext(UserContext)
 
     //valores iniciales para los input
     const initialValues = {
@@ -19,7 +19,7 @@ const RegisterLoginForm = () => {
         email: "",
         password: ""
     }
-    console.log(`Estado signup = ${signUp}`);
+    //console.log(`Estado signup = ${signUp}`);
 
     //Dejar valores iniciales como default
     const [user, setUser] = useState(initialValues)
@@ -34,13 +34,15 @@ const RegisterLoginForm = () => {
     }
     console.log(user)
 
-    //PAra enviar el form
+    //Para enviar el form
     const handleSubmit = (event) => {
         event.preventDefault()
 
         //Si esta en el register ejecut la funcion de registrar
         if (signUp) {
             registerUser(user)
+        } else {
+            loginUser(user)
         }
 
         setUser(initialValues)

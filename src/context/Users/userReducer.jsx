@@ -16,7 +16,7 @@ const userReducer = (state, action) => {
             }
 
         case "REGISTER/LOGIN":
-            localStorage.setItem("token", payload)
+            localStorage.setItem("token", payload.token)
             return {
                 ...state,
                 authStatus: true

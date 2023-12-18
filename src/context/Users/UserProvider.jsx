@@ -1,9 +1,11 @@
 import UserContext from "./UserContext"
-import { useReducer } from "react"
 import userReducer from "./UserReducer"
+import { useReducer } from "react"
+
 import { useNavigate } from "react-router-dom"
+
 import axiosClient from "../../config/axiosClient"
-import { CommentsDisabledOutlined } from "@mui/icons-material"
+
 
 const UserProvider = ({ children }) => {
     const navigate = useNavigate()
@@ -16,7 +18,11 @@ const UserProvider = ({ children }) => {
     }
 
     //useReducer
-    const [userState, dispatch] = useReducer(userReducer, inicialState)
+    const [userState, dispatch] = useReducer(userReducer, {
+        users: [],
+        infoUser: [],
+        authStatus: false
+    })
 
     //Funciones
     const registerUser = async (user) => {
@@ -43,7 +49,7 @@ const UserProvider = ({ children }) => {
             const userLogin = await axiosClient.post("/login", user)
             console.log(userLogin.data)
             console.log(userLogin.data.token);
-            // console.log(axiosClient.defaults)
+            console.log(axiosClient.defaults)
 
             if (userLogin.data.success)  {
                 dispatch({
@@ -57,6 +63,27 @@ const UserProvider = ({ children }) => {
         }
     }
 
+    const verifyToken = async() => {
+        const token = localStorage.getItem("token")
+        
+        if(token) {
+            axiosClient.defaults.headers.common["Authorization"] = `Bearer ${token}`
+            // Authorization = Bearer askjdhaskjdhasjky789216
+        } else {
+            delete axiosClient.defaults.headers.common["Authorization"]
+        }
+
+        try {
+            const infoUserVerify = await axiosClient.get("/user/verifyUser")
+
+            dispatch({type: "INFO_USER", payload: infoUserVerify.data.info})
+
+        } catch (error) {
+            console.log(error)
+        }
+
+    }
+
     const signOut = () => {
         try {
             dispatch({type: "SIGN_OUT"})
@@ -65,6 +92,11 @@ const UserProvider = ({ children }) => {
         } catch (error) {
             console.log(error)
         }
+    }
+
+    const userEdit = async(data) => {
+        const updateUser = await axiosClient.put("/user", data)
+        console.log(updateUser);
     }
 
     const getUsers = async () => {
@@ -78,7 +110,7 @@ const UserProvider = ({ children }) => {
     }
 
     return (
-        <UserContext.Provider value={{ registerUser, loginUser, signOut, infoUser: userState.infoUser, authStatus: userState.authStatus, getUsers, usuarios: userState.users }}>{children}</UserContext.Provider>
+        <UserContext.Provider value={{ registerUser, loginUser, signOut, infoUser: userState.infoUser, authStatus: userState.authStatus, getUsers, usuarios: userState.users, userEdit }}>{children}</UserContext.Provider>
     )
 }
 

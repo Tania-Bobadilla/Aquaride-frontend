@@ -11,6 +11,7 @@ import UserContext from "../../context/Users/UserContext"
 const NavBar = () => {
   const { infoUser, authStatus } = useContext(UserContext)
   const { name } = infoUser
+
   return (
     <header>
       <Navbar collapseOnSelect expand="lg">
@@ -24,7 +25,7 @@ const NavBar = () => {
 
           <Nav className="me-auto">
             <Nav.Link as={NavLink} to="/test">Categoria</Nav.Link>
-            <Nav.Link as={NavLink} to="">Categoria</Nav.Link>
+            <Nav.Link as={NavLink} to="/profile">Categoria</Nav.Link>
             <Nav.Link as={NavLink} to="">Categoria</Nav.Link>
             <Nav.Link as={NavLink} to="">Categoria</Nav.Link>
             <Nav.Link as={NavLink} to="">Categoria</Nav.Link>
@@ -32,7 +33,7 @@ const NavBar = () => {
 
           <Nav>
             <Nav.Link as={NavLink} to="/checkout" className="auth">{<ShoppingCartIcon />}</Nav.Link>
-            {authStatus ? <Nav.Link as={NavLink} to="/profile" className="auth">{<AccountCircleIcon />} {name}</Nav.Link> : 
+            {authStatus ? <Nav.Link as={NavLink} to="/profile" className="auth">{<AccountCircleIcon />} Hola</Nav.Link> : 
               <Nav.Link as={NavLink} to="/auth"><Button variant="outline-primary">Iniciar sesión</Button></Nav.Link>
             }
           </Nav>

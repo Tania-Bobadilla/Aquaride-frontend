@@ -20,9 +20,6 @@ header a {
 header a:hover {
     text-decoration: underline;
 }
-header .auth {
-    display: none;
-}
 header .btn-outline-primary {
     border: #275E63 1px solid;
     color: #275E63;
