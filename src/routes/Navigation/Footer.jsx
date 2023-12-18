@@ -1,5 +1,5 @@
 import { Col, Row } from 'react-bootstrap'
-import logo from '../../assets/Default.png'
+import logo from '../../assets/logo-dark.png'
 
 import LocationOnIcon from '@mui/icons-material/LocationOn'
 import EmailIcon from '@mui/icons-material/Email'
@@ -14,27 +14,27 @@ const Footer = () => {
       <div>
         <img src={logo} alt="Logo" style={{ width: "100px" }} />
         <h6>Contacto</h6>
-        <p>{<LocationOnIcon />} Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-        <p>{<EmailIcon />} email@ejemplo.com</p>
+        <p>{<LocationOnIcon />} Av. Andrés Bello 2425, 7510689 Providencia, Región Metropolitana, Chile</p>
+        <p>{<EmailIcon />} aquaride@gmail.com</p>
         <p>{<LocalPhoneIcon />} +56 9 1234 5678</p>
       </div>
       <hr />
       <div>
         <Row>
           <Col>
-            <h6>Titulo</h6>
-            <p>Lorem ipsum dolor sit</p>
-            <p>Lorem ipsum dolor sit</p>
-            <p>Lorem ipsum dolor sit</p>
+            <h6>Información</h6>
+            <a href="#"><p>Sobre Nosotros</p></a>
+            <a href="#"><p>Despachos</p></a>
+            <a href="#"><p>Contacto</p></a>
           </Col>
           <Col>
-            <h6>Titulo</h6>
-            <p>Lorem ipsum dolor sit</p>
-            <p>Lorem ipsum dolor sit</p>
-            <p>Lorem ipsum dolor sit</p>
+            <h6>Ayuda</h6>
+            <a href="#"><p>Preguntas Frecuentes</p></a>
+            <a href="#"><p>Términos y Condiciones</p></a>
+            <a href="#"><p>Politica de Privacidad</p></a>
           </Col>
           <Col>
-            <h6>Titulo</h6>
+            <h6>Redes sociales</h6>
             <Row>
               <Col><a href="https://www.instagram.com/" target="_blank" rel="noreferrer">{<InstagramIcon />}</a></Col>
               <Col><a href="https://www.facebook.com/" target="_blank" rel="noreferrer">{<FacebookIcon />}</a></Col>

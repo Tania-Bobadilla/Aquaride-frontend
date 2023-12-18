@@ -4,7 +4,7 @@ import img from "../../assets/Default.png"
 const Categories = () => {
     return (
         <section className='categories'>
-            <h2>Titulo</h2>
+            <h2>Categorias</h2>
             <Row>
                 <Col>
                     <NavLink to="/">

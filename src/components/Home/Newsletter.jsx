@@ -1,5 +1,5 @@
 import { Button, Card, Form, InputGroup } from 'react-bootstrap'
-import img from "../../assets/image-12x.jpg"
+import img from "../../assets/newsletter (2).jpg"
 
 const Newsletter = () => {
     return (
@@ -7,7 +7,7 @@ const Newsletter = () => {
             <Card className="bg-dark text-white">
                 <Card.Img src={img} alt="Card image" />
                 <Card.ImgOverlay>
-                    <Card.Title>Card title</Card.Title>
+                    <Card.Title>Newsletter</Card.Title>
                     <Card.Text>
                         This is a wider card with supporting text below as a natural lead-in
                         to additional content. This content is a little bit longer.
@@ -19,7 +19,7 @@ const Newsletter = () => {
                             aria-describedby="basic-addon2"
                         />
                         <Button variant="outline-secondary" id="button-sub">
-                            Button
+                            Enviar
                         </Button>
                     </InputGroup>
                 </Card.ImgOverlay>
