@@ -10,6 +10,7 @@ import Profile from "../pages/Profile"
 import ProductList from "../pages/ProductList"
 import ProductItem from "../pages/ProductItem"
 import Checkout from "../pages/Checkout"
+import Cart from "../pages/Cart"
 
 const AppRoutes = () => {
     return (
@@ -23,7 +24,8 @@ const AppRoutes = () => {
                     <Route path="/products/:category" element={<ProductList />} />
                     <Route path="/products/:category/:productID" element={<ProductItem />} />
                     <Route path="/checkout" element={<Checkout />} />
-                    <Route path="*" element={<ErrorPage />} />
+                    <Route path="/cart" element={<Cart />} />
+                    <Route path="/ErrorPage" element={<ErrorPage />} />
                 </Route>
             </Routes>
         </>

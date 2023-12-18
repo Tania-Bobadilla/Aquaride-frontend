@@ -18,11 +18,12 @@ const NavBar = () => {
           </Nav>
 
           <Nav className="me-auto">
-            <Nav.Link as={NavLink} to="">Categoria</Nav.Link>
-            <Nav.Link as={NavLink} to="">Categoria</Nav.Link>
-            <Nav.Link as={NavLink} to="">Categoria</Nav.Link>
-            <Nav.Link as={NavLink} to="">Categoria</Nav.Link>
-            <Nav.Link as={NavLink} to="">Categoria</Nav.Link>
+            <Nav.Link as={NavLink} to="">HOMBRE</Nav.Link>
+            <Nav.Link as={NavLink} to="">MUJER</Nav.Link>
+            <Nav.Link as={NavLink} to="">NIÑOS</Nav.Link>
+            <Nav.Link as={NavLink} to="">ACCESORIOS</Nav.Link>
+            <Nav.Link as={NavLink} to="">SURF</Nav.Link>
+            <Nav.Link as={NavLink} to="">CONTACTO</Nav.Link>
           </Nav>
 
           <Nav>

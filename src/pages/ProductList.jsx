@@ -1,7 +1,7 @@
 const ProductList = () => {
-  return (
-    <div>Product-List</div>
-  )
-}
-
-export default ProductList
+    return (
+      <div>ProductList</div>
+    )
+  }
+  
+  export default ProductList

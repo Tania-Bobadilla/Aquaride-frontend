@@ -1,6 +1,6 @@
 import { Button, Card, Col, Container, Row } from "react-bootstrap"
 import img from "../assets/image-12x.jpg"
-import FormRegister from "../components/FormRegister.jsx"
+import FormRegister from "./FormRegister.jsx"
 import { NavLink } from "react-router-dom"
 
 const Register = () => {
