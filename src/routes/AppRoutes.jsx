@@ -9,12 +9,8 @@ import Profile from "../pages/Profile"
 import ProductList from "../pages/ProductList"
 import ProductItem from "../pages/ProductItem"
 import Checkout from "../pages/Checkout"
-<<<<<<< HEAD
 import Cart from "../pages/Cart"
-=======
 import Testing from "../pages/Testing"
-
->>>>>>> 7d9378681f6faf5f0d8377ff70af6c0aaa5f83aa
 
 const AppRoutes = () => {
     return (
