@@ -11,6 +11,13 @@ import ProductItem from "../pages/ProductItem"
 import Checkout from "../pages/Checkout"
 import Cart from "../pages/Cart"
 import Testing from "../pages/Testing"
+import Contacto from "../pages/Contacto"
+import Hombre from "../pages/Hombre"
+import Mujer from "../pages/Mujer"
+import Accesorios from "../pages/Accesorios"
+import Surf from "../pages/Surf"
+import Niños from "../pages/Niños"
+
 
 const AppRoutes = () => {
     return (
@@ -21,11 +28,17 @@ const AppRoutes = () => {
                     <Route path="/test" element={<Testing />} />
                     <Route path="/auth" element={<Auth />} />
                     <Route path="/profile" element={<Profile />} />
-                    <Route path="/products/:category" element={<ProductList />} />
-                    <Route path="/products/:category/:productID" element={<ProductItem />} />
+                    <Route path="/productlist" element={<ProductList />} />
+                    <Route path="/productitem" element={<ProductItem />} />
                     <Route path="/checkout" element={<Checkout />} />
+                    <Route path="/contacto" element={<Contacto />} />
                     <Route path="/cart" element={<Cart />} />
-                    <Route path="/ErrorPage" element={<ErrorPage />} />
+                    <Route path="/hombre" element={<Hombre />} />
+                    <Route path="/mujer" element={<Mujer />} />
+                    <Route path="/surf" element={<Surf />} />
+                    <Route path="/accesorios" element={<Accesorios />} />
+                    <Route path="/niños" element={<Niños />} />
+
                 </Route>
             </Routes>
         </>

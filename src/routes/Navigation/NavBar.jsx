@@ -23,12 +23,13 @@ const NavBar = () => {
           </Nav>
 
           <Nav className="me-auto">
-            <Nav.Link as={NavLink} to="/test">HOMBRE</Nav.Link>
-            <Nav.Link as={NavLink} to="">MUJER</Nav.Link>
-            <Nav.Link as={NavLink} to="">NIÑOS</Nav.Link>
-            <Nav.Link as={NavLink} to="">ACCESORIOS</Nav.Link>
-            <Nav.Link as={NavLink} to="">SURF</Nav.Link>
-            <Nav.Link as={NavLink} to="">CONTACTO</Nav.Link>
+            <Nav.Link as={NavLink} to="">INICIO</Nav.Link>
+            <Nav.Link as={NavLink} to="/hombre">HOMBRE</Nav.Link>
+            <Nav.Link as={NavLink} to="/mujer">MUJER</Nav.Link>
+            <Nav.Link as={NavLink} to="/niños">NIÑOS</Nav.Link>
+            <Nav.Link as={NavLink} to="/accesorios">ACCESORIOS</Nav.Link>
+            <Nav.Link as={NavLink} to="/surf">SURF</Nav.Link>
+            <Nav.Link as={NavLink} to="/contacto">CONTACTO</Nav.Link>
           </Nav>
 
           <Nav>
