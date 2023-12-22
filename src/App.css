@@ -376,7 +376,6 @@ footer a:hover {
     border: #275E63 1px solid;
     font-weight: 600;
     text-transform: uppercase;
-    width: 20%;
 }
 .profile .btn-primary:hover {
     border: rgb(15, 63, 66) 1px solid;
@@ -389,7 +388,6 @@ footer a:hover {
     border: #275E63 1px solid;
     color: #275E63;
     text-transform: uppercase;
-    width: 15%;
 }
 .profile .btn-outline-secondary:hover {
     color: #FFFFFF;

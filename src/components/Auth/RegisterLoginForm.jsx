@@ -32,7 +32,6 @@ const RegisterLoginForm = () => {
             [e.target.name]: e.target.value
         }))
     }
-    console.log(user)
 
     //Para enviar el form
     const handleSubmit = (event) => {
@@ -43,11 +42,8 @@ const RegisterLoginForm = () => {
             registerUser(user)
         } else {
             loginUser(user)
+            navigate("/")
         }
-
-        setUser(initialValues)
-        //Redirecciona al home
-        navigate('/')
     }
 
     //Para cambiar de register a login

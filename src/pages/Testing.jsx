@@ -1,6 +1,5 @@
 import { useContext, useEffect } from "react"
 import UserContext from "../context/Users/UserContext"
-import RegisterLoginForm from "../components/Auth/RegisterLoginForm"
 
 const Testing = () => {
     const { getUsers, usuarios } = useContext(UserContext)
@@ -16,10 +15,11 @@ const Testing = () => {
             <h1>Lista de usuraios</h1>
             {usuarios.map((user) => (
                 <div key={user.id}>
-                    <h6>{user.email}</h6>
+                    <h6>{user.name}</h6>
+                    <p>{user.email}</p>
+                    <p>{user._id}</p>
                 </div>
             ))}
-            <RegisterLoginForm />
         </div>
     )
 }

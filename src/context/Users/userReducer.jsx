@@ -2,19 +2,6 @@ const userReducer = (state, action) => {
     const {type, payload} = action
     
     switch (type) {
-        case "GET_USERS":
-            return {
-                ...state, 
-                users: payload,
-                user: [{
-                    id: "",
-                    name: "",
-                    email: "",
-                    age: 0,
-                    password: ""
-                }]
-            }
-
         case "REGISTER/LOGIN":
             localStorage.setItem("token", payload.token)
             return {
@@ -33,6 +20,16 @@ const userReducer = (state, action) => {
                 ...state,
                 infoUser: [],
                 authStatus: false
+            }
+        case "EDIT_USER":
+            return {
+                ...state,
+                infoUser: payload
+            }
+        case "DELETE_USER":
+            return {
+                ...state,
+                infoUser: payload
             }
     
         default:
