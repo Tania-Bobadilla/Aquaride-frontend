@@ -1,10 +1,11 @@
 import { useContext, useState } from "react"
 import { useNavigate } from "react-router-dom"
 import UserContext from "../../context/Users/UserContext"
+
 import { Button } from "react-bootstrap"
 
-
 const RegisterLoginForm = () => {
+    // Para redirigir
     const navigate = useNavigate()
 
     //Para trackear si estamos en login o register (false = login // true = register)
@@ -19,7 +20,6 @@ const RegisterLoginForm = () => {
         email: "",
         password: ""
     }
-    //console.log(`Estado signup = ${signUp}`);
 
     //Dejar valores iniciales como default
     const [user, setUser] = useState(initialValues)
@@ -40,6 +40,7 @@ const RegisterLoginForm = () => {
         //Si esta en el register ejecut la funcion de registrar
         if (signUp) {
             registerUser(user)
+            navigate("/")
         } else {
             loginUser(user)
             navigate("/")
@@ -54,8 +55,12 @@ const RegisterLoginForm = () => {
 
     return (
         <div>
-            <h2>{signUp ? "Registrarse" : "Login"}</h2>
+            <h2>
+                {/* Cambiar el titulo */}
+                {signUp ? "Registrarse" : "Login"}
+            </h2>
             <form className="form-register" onSubmit={handleSubmit}>
+                {/* Mostrar input nombre si esta en register */}
                 {signUp && (
                     <div className='mb-3'>
                         <label htmlFor="name">

@@ -94,7 +94,7 @@ footer a:hover {
 /*WELOCOME CAROUSEL*/
 .welcome .carousel-inner img {
     width: 100%;
-    height: 80vh;
+    height: 70vh;
     box-shadow: inset 0 0 0 1000px rgba(0,0,0,.5);
 } 
 .welcome .carousel-caption {
@@ -103,13 +103,13 @@ footer a:hover {
     text-align: left;
 }
 .welcome .carousel-caption h1 {
-    color: #275E63;
+    color: #222222;
     font-size: 46px;
     font-weight: 900;
     text-align: left;
 }
 .welcome .carousel-caption h5 {
-    color: #275E63;
+    color: #222222;
     font-size: 28px;
     font-weight: 500;
     text-align: left;
@@ -192,6 +192,7 @@ footer a:hover {
 }
 /*SERVICES*/
 .services {
+    margin-top: 10px;
     padding: 25px;
     color: #275E63;
 }

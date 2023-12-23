@@ -7,10 +7,9 @@ const Newsletter = () => {
             <Card className="bg-dark text-white">
                 <Card.Img src={img} alt="Card image" />
                 <Card.ImgOverlay>
-                    <Card.Title>Newsletter</Card.Title>
+                    <Card.Title>Suscríbete a nuestro newsletter</Card.Title>
                     <Card.Text>
-                        This is a wider card with supporting text below as a natural lead-in
-                        to additional content. This content is a little bit longer.
+                    ¡Sumérgete en el mundo de Aquaride y sé el primero en conocer las últimas olas de estilo, ofertas exclusivas y noticias emocionantes!
                     </Card.Text>
                     <InputGroup className="mb-3">
                         <Form.Control

@@ -8,6 +8,7 @@ import { useReducer } from "react"
 import { useNavigate } from "react-router-dom"
 
 const UserProvider = ({ children }) => {
+    // Para redireccion
     const navigate = useNavigate()
 
     //Estado inicial
@@ -23,8 +24,10 @@ const UserProvider = ({ children }) => {
     // LOGIN
     const loginUser = async (user) => {
         try {
+            // Funcion para el back
             const userLogin = await axiosClient.post("/login", user)
 
+            // Si el res es success: true
             if (userLogin.data.success) {
                 dispatch({
                     type: "REGISTER/LOGIN",
@@ -38,11 +41,11 @@ const UserProvider = ({ children }) => {
     // REGISTER
     const registerUser = async (user) => {
         try {
+            // Funcion para el back
             const userRegister = await axiosClient.post('/createUser', user)
             const newUser = userRegister.data
-            console.log(newUser);
-            console.log(newUser.token);
 
+            // Si la res es success: true
             if (newUser.success) {
                 dispatch({
                     type: "REGISTER/LOGIN",
@@ -56,18 +59,19 @@ const UserProvider = ({ children }) => {
     }
     // VERIFY USER
     const verifyToken = async () => {
+        // Buscar token guardado en el localStorage
         const token = localStorage.getItem("token")
 
         // Si encuentra el token le añade el Bearer
         if (token) {
             axiosClient.defaults.headers.common["Authorization"] = `Bearer ${token}`
-            console.log(axiosClient.defaults.headers.common["Authorization"]);
         } else {
             // Si no elimina lo que hay en authorizartion??
             delete axiosClient.defaults.headers.common["Authorization"]
         }
 
         try {
+            // Funcion para el back
             const infoUserVerify = await axiosClient.get('/verifyUser')
             dispatch({
                 type: "INFO_USER",
@@ -89,8 +93,8 @@ const UserProvider = ({ children }) => {
     // EDIT USER
     const editUser = async (data) => {
         try {
+            // Funcion para el back
             const updateUser = await axiosClient.put("/user", data)
-            console.log(updateUser.data)
             dispatch({
                 type: "EDIT_USER",
                 payload: updateUser
@@ -100,14 +104,15 @@ const UserProvider = ({ children }) => {
         }
     }
     // DELETE USER 
-    // const deleteUser = async(id) => {
-    //     try {
-    //         console.log(id)
-    //         await axiosClient.delete("/user", id)
-    //     } catch (error) {
-    //         console.log(error)
-    //     }
-    // }
+    const deleteUser = async (id) => {
+        try {
+          // Funcion para el back pasando el id por el body y hacer que lo reconosca
+          const userDelete = await axiosClient.delete("/user", { data: { id: id } });
+          console.log(userDelete.data);
+        } catch (error) {
+          console.log(error);
+        }
+      }
 
     return (
         <UserContext.Provider value={{
@@ -117,7 +122,8 @@ const UserProvider = ({ children }) => {
             authStatus: userState.authStatus,
             verifyToken,
             signOut,
-            editUser
+            editUser,
+            deleteUser
         }}>{children}</UserContext.Provider>
     )
 }

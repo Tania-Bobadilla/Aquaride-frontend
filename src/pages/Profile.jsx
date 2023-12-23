@@ -1,13 +1,13 @@
 import { Button, Card } from "react-bootstrap"
-// import img from "../assets/image-12x.jpg"
 
 import { useContext, useEffect, useState } from "react"
 import UserContext from "../context/Users/UserContext"
 
 const Profile = () => {
   // "Importar" funciones del userProvider
-  const { infoUser, authStatus, verifyToken, signOut, editUser } = useContext(UserContext)
-  // Para guardar info del name y email
+  const { infoUser, authStatus, verifyToken, signOut, editUser,deleteUser } = useContext(UserContext)
+
+  // Para guardar info del name, email y ID
   const [userName, setUserName] = useState("No Conectado")
   const [userEmail, setUserEmail] = useState("No Conectado")
   const [userID, setUserID] = useState("No Conectado")
@@ -43,7 +43,7 @@ const Profile = () => {
     }
     getInfoUser()
   }, [authStatus, userName, userEmail])
-  console.log(userForm)
+
   // Enviar data para el edit user
   const handleSubmit = (event) => {
     event.preventDefault()
@@ -53,25 +53,28 @@ const Profile = () => {
       console.log(error)
     }
   }
-  // const handleDelete = () => {
-  //   try {
-  //     deleteUser(userForm._id)
-  //     console.log(userForm._id)
-  //   } catch(error) {
-  //     console.log(error)
-  //   }
-  // }
+
+  // Enviar datos para el delete user
+  const handleDelete = () => {
+    try {
+      deleteUser(userForm._id)
+    } catch(error) {
+      console.log(error)
+    }
+  }
 
   return (
     <main className="profile">
+      {/* Card con info del usuario */}
       <Card style={{ width: '18rem' }}>
         <Card.Body>
           <Card.Title>{`${userName}`}</Card.Title>
           <Card.Subtitle className="mb-2 text-muted">{userEmail}</Card.Subtitle>
           <Button>Edit User</Button>
-          <Button variant="outline-secondary">Delete User</Button>
+          <Button variant="outline-secondary" onClick={handleDelete}>Delete User</Button>
         </Card.Body>
       </Card>
+      {/* Formulario para editar usuario */}
       <form onSubmit={handleSubmit}>
         <h5>Editar datos</h5>
         <div className='mb-3'>
