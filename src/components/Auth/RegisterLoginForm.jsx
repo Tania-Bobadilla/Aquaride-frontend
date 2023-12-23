@@ -2,7 +2,7 @@ import { useContext, useState } from "react"
 import { useNavigate } from "react-router-dom"
 import UserContext from "../../context/Users/UserContext"
 
-import { Button } from "react-bootstrap"
+import { Button, Card } from "react-bootstrap"
 
 const RegisterLoginForm = () => {
     // Para redirigir
@@ -54,63 +54,67 @@ const RegisterLoginForm = () => {
     }
 
     return (
-        <div>
+        <div className="auth-side">
             <h2>
                 {/* Cambiar el titulo */}
-                {signUp ? "Registrarse" : "Login"}
+                {signUp ? "Registrate" : "Login"}
             </h2>
-            <form className="form-register" onSubmit={handleSubmit}>
-                {/* Mostrar input nombre si esta en register */}
-                {signUp && (
-                    <div className='mb-3'>
-                        <label htmlFor="name">
-                            <strong>Nombre</strong>
-                        </label>
-                        <input
-                            type="text"
-                            placeholder='Name'
-                            autoComplete='off'
-                            name='name'
-                            className='form-control rounded-1'
-                            onChange={handleChange}
-                            value={user.name}
-                            required
-                        />
-                    </div>
-                )}
-                <div className='mb-3'>
-                    <label htmlFor="email">
-                        <strong>Email</strong>
-                    </label>
-                    <input
-                        type="email"
-                        placeholder='Email'
-                        autoComplete='off'
-                        name='email'
-                        className='form-control rounded-1'
-                        onChange={handleChange}
-                        value={user.email}
-                        required
-                    />
-                </div>
-                <div className='mb-3'>
-                    <label htmlFor="password">
-                        <strong>Contraseña</strong>
-                    </label>
-                    <input
-                        type="password"
-                        placeholder='Contraseña'
-                        name='password'
-                        className='form-control rounded-1'
-                        onChange={handleChange}
-                        value={user.password}
-                        required
-                    />
-                </div>
-                <Button type='submit'>{signUp ? "Registrarse" : "Login"}</Button>
-            </form >
+            <Card>
+                <Card.Body>
+                    <form className="form-register" onSubmit={handleSubmit}>
+                        {/* Mostrar input nombre si esta en register */}
+                        {signUp && (
+                            <div className='mb-3'>
+                                <label htmlFor="name">
+                                    <strong>Nombre</strong>
+                                </label>
+                                <input
+                                    type="text"
+                                    placeholder='Nombre'
+                                    autoComplete='off'
+                                    name='name'
+                                    className='form-control rounded-1'
+                                    onChange={handleChange}
+                                    value={user.name}
+                                    required
+                                />
+                            </div>
+                        )}
+                        <div className='mb-3'>
+                            <label htmlFor="email">
+                                <strong>Email</strong>
+                            </label>
+                            <input
+                                type="email"
+                                placeholder='Email'
+                                autoComplete='off'
+                                name='email'
+                                className='form-control rounded-1'
+                                onChange={handleChange}
+                                value={user.email}
+                                required
+                            />
+                        </div>
+                        <div className='mb-3'>
+                            <label htmlFor="password">
+                                <strong>Contraseña</strong>
+                            </label>
+                            <input
+                                type="password"
+                                placeholder='Contraseña'
+                                name='password'
+                                className='form-control rounded-1'
+                                onChange={handleChange}
+                                value={user.password}
+                                required
+                            />
+                        </div>
+                        <Button type='submit'>{signUp ? "Registrarse" : "Login"}</Button>
+                    </form >
+                </Card.Body>
+            </Card>
             <p>{signUp ? "¿Ya tienes cuenta?" : "¿No tienes cuenta?"}</p>
-            <Button variant="outline-primary" onClick={changeMode}>{signUp ? "Login" : "Registrate"}</Button>
+            <Button variant="outline-secondary" onClick={changeMode}>{signUp ? "Login" : "Registrate"}</Button>
         </div>
     )
 }
