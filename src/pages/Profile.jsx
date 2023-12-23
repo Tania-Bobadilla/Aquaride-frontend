@@ -7,6 +7,9 @@ const Profile = () => {
   // "Importar" funciones del userProvider
   const { infoUser, authStatus, verifyToken, signOut, editUser, deleteUser } = useContext(UserContext)
 
+  // Para abrir formulario edit
+  const [open, setOpen] = useState(false)
+
   // Para guardar info del name, email y ID
   const [userName, setUserName] = useState("No Conectado")
   const [userEmail, setUserEmail] = useState("No Conectado")
@@ -18,6 +21,11 @@ const Profile = () => {
     name: "",
     email: ""
   })
+
+  // Funcion para abrir y cerrar formulario
+  const handleOpen = () => {
+    setOpen(!open)
+  }
 
   //Funcion para cuando cambia lo que esta en el formulario
   const handleChange = async (e) => {
@@ -49,6 +57,7 @@ const Profile = () => {
     event.preventDefault()
     try {
       editUser(userForm)
+      setOpen(!open)
     } catch (error) {
       console.log(error)
     }
@@ -72,13 +81,13 @@ const Profile = () => {
           <Card.Body>
             <Card.Title>{`${userName}`}</Card.Title>
             <Card.Subtitle>{userEmail}</Card.Subtitle>
-            <Button>Editar Ususario</Button>
+            <Button onClick={handleOpen}>Editar Ususario</Button>
             <br />
             <Button variant="outline-warning" size="sm" onClick={handleDelete}>Borrar Usuario</Button>
           </Card.Body>
         </Card>
         {/* Formulario para editar usuario */}
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit} style={{display: !open ? "none" : "block"}}>
           <h5>Editar datos</h5>
           <div className='mb-3 input-id'>
             <label htmlFor="id">
