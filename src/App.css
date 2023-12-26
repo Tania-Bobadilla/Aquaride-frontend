@@ -55,6 +55,10 @@ footer a {
 footer a:hover {
     color: #081516;
 }
+footer .copy {
+    margin-top: 20px;
+    font-size: 14px;
+}
 /*--------------------------------------------------------*/
 /*ERROR*/
 .error-page {
@@ -389,6 +393,15 @@ footer a:hover {
 .profile .btn-outline-secondary:hover {
     color: #FFFFFF;
     background-color: #275E63;
+}
+/* MODAL */
+.modal-footer .btn-primary {
+    background-color: #275E63;
+    border: #275E63 1px solid;
+}
+.modal-footer .btn-primary:hover {
+    border: rgb(15, 63, 66) 1px solid;
+    background-color: rgb(15, 63, 66);
 }
 /*--------------------------------------------------------*/
 /*CARD PRODUCT*/

@@ -109,6 +109,7 @@ const UserProvider = ({ children }) => {
           // Funcion para el back pasando el id por el body y hacer que lo reconosca
           const userDelete = await axiosClient.delete("/user", { data: { id: id } });
           console.log(userDelete.data);
+          userState.authStatus = false
         } catch (error) {
           console.log(error);
         }

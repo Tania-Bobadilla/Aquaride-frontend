@@ -51,6 +51,7 @@ const Footer = () => {
           </Col>
         </Row>
       </div>
+      <p className="copy">&copy; Esta es una página ficticia para fines académicos.</p>
     </footer>
   )
 }

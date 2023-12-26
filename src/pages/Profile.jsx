@@ -1,11 +1,15 @@
-import { Button, Card, Container } from "react-bootstrap"
+import { Button, Card, Container, Modal } from "react-bootstrap"
 
 import { useContext, useEffect, useState } from "react"
 import UserContext from "../context/Users/UserContext"
 
+import { useNavigate } from "react-router-dom"
+
 const Profile = () => {
   // "Importar" funciones del userProvider
   const { infoUser, authStatus, verifyToken, signOut, editUser, deleteUser } = useContext(UserContext)
+
+  const navigate = useNavigate()
 
   // Para abrir formulario edit
   const [open, setOpen] = useState(false)
@@ -21,6 +25,14 @@ const Profile = () => {
     name: "",
     email: ""
   })
+
+  // Funcionalidad modal
+  // Para mostrar y cerrar
+  const [show, setShow] = useState(false);
+
+  // Funciones para cambair el estado del modal
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
 
   // Funcion para abrir y cerrar formulario
   const handleOpen = () => {
@@ -67,6 +79,8 @@ const Profile = () => {
   const handleDelete = () => {
     try {
       deleteUser(userForm._id)
+      navigate("/")
+      signOut()
     } catch (error) {
       console.log(error)
     }
@@ -83,7 +97,7 @@ const Profile = () => {
             <Card.Subtitle>{userEmail}</Card.Subtitle>
             <Button onClick={handleOpen}>Editar Ususario</Button>
             <br />
-            <Button variant="outline-warning" size="sm" onClick={handleDelete}>Borrar Usuario</Button>
+            <Button variant="outline-warning" size="sm" onClick={handleShow}>Borrar Usuario</Button>
           </Card.Body>
         </Card>
         {/* Formulario para editar usuario */}
@@ -135,6 +149,22 @@ const Profile = () => {
         </form>
         <Button variant="outline-secondary" onClick={signOut}>LogOut</Button>
       </Container>
+
+      {/* Modal */}
+      <Modal show={show} onHide={handleClose}>
+        <Modal.Header closeButton>
+          <Modal.Title>Advertencia</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>Estas a punto de borrar tu usuario, ¿Estás seguro?</Modal.Body>
+        <Modal.Footer>
+          <Button variant="primary" onClick={handleClose}>
+            No, quiero conservar mi usuario
+          </Button>
+          <Button variant="outline-danger" onClick={handleDelete}>
+            Si, Borrar
+          </Button>
+        </Modal.Footer>
+      </Modal>
     </main >
   )
 }

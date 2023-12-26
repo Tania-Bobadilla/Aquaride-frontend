@@ -5,7 +5,7 @@ import img3 from "../../assets/slide3.jpg"
 
 const CarouselWelcome = () => {
     const titulo = "Aquaride"
-    const msg = "Surfea la Vida, Vive la Ola"
+    const msg = "Más Que Moda, Más Que Deporte, La Esencia del Surf"
 
     return (
         <section className='welcome'>
