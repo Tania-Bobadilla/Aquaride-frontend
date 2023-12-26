@@ -5,6 +5,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
 const Carousel = () => {
+  // EJEMPLO = REEMPLAZAR CON PRODS
   const items = [
     {
       id: 1,
@@ -56,6 +57,7 @@ const Carousel = () => {
       price: "789"
     }
   ]
+  // Configuracion carousel (mostrar puntos, mostrar 4 cards, cambiar de a 4 cards)
   const settings = {
     dots: true,
     infinite: true,

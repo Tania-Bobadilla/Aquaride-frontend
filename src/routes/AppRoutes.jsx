@@ -10,7 +10,6 @@ import ProductList from "../pages/ProductList"
 import ProductItem from "../pages/ProductItem"
 import Checkout from "../pages/Checkout"
 import Cart from "../pages/Cart"
-import Testing from "../pages/Testing"
 import Contacto from "../pages/Contacto"
 import Hombre from "../pages/Hombre"
 import Mujer from "../pages/Mujer"
@@ -25,7 +24,6 @@ const AppRoutes = () => {
             <Routes>
                 <Route path="/" element={<Layout />}>
                     <Route path="/" element={<Home />} />
-                    <Route path="/test" element={<Testing />} />
                     <Route path="/auth" element={<Auth />} />
                     <Route path="/profile" element={<Profile />} />
                     <Route path="/productlist" element={<ProductList />} />
@@ -38,7 +36,7 @@ const AppRoutes = () => {
                     <Route path="/surf" element={<Surf />} />
                     <Route path="/accesorios" element={<Accesorios />} />
                     <Route path="/niños" element={<Niños />} />
-
+                    <Route path="*" element={<ErrorPage />} />
                 </Route>
             </Routes>
         </>
