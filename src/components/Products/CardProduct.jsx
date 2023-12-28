@@ -1,26 +1,20 @@
-import { Link } from "react-router-dom";
-const CardProducts = ({product}) => {
+import { Button, Card } from "react-bootstrap";
 
-  const {name, price, _id, image} = product;
+const CardProducts = ({ product }) => {
+
+  const { name, price, _id, image } = product;
 
   return (
-    <div>
-      <Link className="no-underline" to={`/product/${_id}`}>
-        <div className="group relative">
-          <div className="w-full min-h-80 bg-gray-300 aspect-w-1 rounded-md overflow-hidden group-hover:opacity-60 lg:aspect-none">
-            <img src={image} alt={name} className="w-full h-60 object-center lg:w-full lg:h-60"  />
-          </div>
-          <div className="mt-4 justify-between">
-            <div>
-              <h3 className="text-sm text-gray-700">{name}</h3>
-            </div>
-            <p className="text-sm text-gray-700 font-medium">
-              ${price}
-            </p>
-          </div>
-        </div>
-      </Link>
-    </div>
+    <>
+      <Card style={{ width: '350px' }} >
+        <Card.Img variant="top" src={image} />
+        <Card.Body>
+          <Card.Title>{name}</Card.Title>
+          <Card.Text>$ {price}</Card.Text>
+          <Button variant="primary">Go somewhere</Button>
+        </Card.Body>
+      </Card>
+    </>
   )
 }
 

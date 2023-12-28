@@ -31,9 +31,26 @@ const ProductProvider = ({ children }) => {
             payload: productos
         })
     }
+
+    // Obtener producto por ID
+    const getProductById = async(id) => {
+        try {
+            const response = await axiosClient.get(`/ropa_de_hombre/${id}`);
+            const productInfo = response.data.menClothes;
+            console.log(productInfo)
+            dispatch({
+                type: "GET_PRODUCT",
+                payload: productInfo 
+            })
+        } catch (error) {
+            console.log(error)
+        }
+    } 
+
     return (
         <ProductContext.Provider value={{
             getProducts,
+            getProductById,
             products: productState.products,
             product: productState.product
         }}>
