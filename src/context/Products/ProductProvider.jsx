@@ -32,6 +32,7 @@ const ProductProvider = ({ children }) => {
         })
     }
 
+<<<<<<< HEAD
     // Obtener productos mujer
 
     const getProductsmujer = async() => {
@@ -88,6 +89,27 @@ const ProductProvider = ({ children }) => {
             getProductsniños,
             getProductsaccesorios,
             getProductssurf,
+=======
+    // Obtener producto por ID
+    const getProductById = async(id) => {
+        try {
+            const response = await axiosClient.get(`/ropa_de_hombre/${id}`);
+            const productInfo = response.data.menClothes;
+            console.log(productInfo)
+            dispatch({
+                type: "GET_PRODUCT",
+                payload: productInfo 
+            })
+        } catch (error) {
+            console.log(error)
+        }
+    } 
+
+    return (
+        <ProductContext.Provider value={{
+            getProducts,
+            getProductById,
+>>>>>>> 12cb5bb6b3b6cb469d46c6af386f5a282e255177
             products: productState.products,
             product: productState.product
         }}>

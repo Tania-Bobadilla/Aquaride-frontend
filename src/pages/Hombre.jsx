@@ -1,9 +1,8 @@
-import axios from "axios"
-import { useContext, useEffect, useState } from "react"
+import { useContext, useEffect } from "react"
 import { Button, Card, CardGroup, Col, Row } from "react-bootstrap"
 import ProductContext from "../context/Products/ProductContext"
-import axiosClient from '../config/axiosClient'
 import { Link } from "react-router-dom"
+import CardProduct from "../components/Products/CardProduct"
 
 const Hombre = () => {
   const { getProductshombre, products } = useContext(ProductContext)
@@ -32,6 +31,7 @@ const Hombre = () => {
         </Col>
         <Col md={9}>
           <CardGroup>
+<<<<<<< HEAD
             {products.map((prod) => (
               <div key={prod._id}>
                 <Link to={`/hombre/${prod._id}`}>
@@ -45,6 +45,12 @@ const Hombre = () => {
                   </Card>
                 </Link>
               </div>
+=======
+            {products.map((product) => (
+              <Link className="no-underline" to={`/hombre/${product._id}`} key={product._id}>
+                <CardProduct  product={product} />
+              </Link>
+>>>>>>> 12cb5bb6b3b6cb469d46c6af386f5a282e255177
             ))}
           </CardGroup>
         </Col>
