@@ -6,11 +6,11 @@ import axiosClient from '../config/axiosClient'
 import { Link } from "react-router-dom"
 
 const Hombre = () => {
-  const { getProducts, products } = useContext(ProductContext)
+  const { getProductshombre, products } = useContext(ProductContext)
 
   useEffect(() => {
     const productList = async () => {
-      await getProducts()
+      await getProductshombre()
     }
     productList()
   }, [])
@@ -18,7 +18,7 @@ const Hombre = () => {
   return (
     <main>
       <Row>
-        <h2>Products</h2>
+        <h2>Catálogo de Hombre</h2>
 
         <Col md={3}>
           <h2>Categorías</h2>
@@ -40,7 +40,7 @@ const Hombre = () => {
                     <Card.Body>
                       <Card.Title>{prod.name}</Card.Title>
                       <Card.Text>{prod.price}</Card.Text>
-                      <Button variant="primary">Go somewhere</Button>
+                      <Button variant="primary">Agregar al Carro</Button>
                     </Card.Body>
                   </Card>
                 </Link>

@@ -10,7 +10,7 @@ const ContactUsView = () => {
         <div className="col-md-8">
           <div className="card">
             <div className="card-header">
-              <i className="bi bi-envelope"></i> Send Message
+              <i className="bi bi-envelope"></i> Contactanos
             </div>
             <div className="container mt-5">
       <h2 className="mb-4">Contacto</h2>
