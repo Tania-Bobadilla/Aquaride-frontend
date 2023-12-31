@@ -8,9 +8,15 @@ import ShoppingCartIcon from '@mui/icons-material/ShoppingCart'
 import { useContext } from "react"
 import UserContext from "../../context/Users/UserContext"
 
+import CartContext from "../../context/Cart/CartContext"
+import CartIcon from "../../components/Cart/CartIcon";
+import CartDropdown from "../../components/Cart/CartDropdown";
+
 const NavBar = () => {
   // "Importar" authStatus del UserProvider
   const { authStatus } = useContext(UserContext)
+
+  const { isCartOpen } = useContext(CartContext)
 
   return (
     <header>
@@ -35,9 +41,8 @@ const NavBar = () => {
           </Nav>
 
           <Nav>
-            <Nav.Link as={NavLink} to="/checkout" className="auth">
-              <ShoppingCartIcon />
-            </Nav.Link>
+            <CartIcon />
+            {isCartOpen && <CartDropdown />}
             {/* Si esta logeado muestra icono de perfil, sino muestra boton para iniciar sesion */}
             {authStatus ?
               <Nav.Link as={NavLink} to="/profile" className="auth"><AccountCircleIcon /></Nav.Link> :

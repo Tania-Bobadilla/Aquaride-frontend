@@ -31,7 +31,6 @@ const Hombre = () => {
         </Col>
         <Col md={9}>
           <CardGroup>
-<<<<<<< HEAD
             {products.map((prod) => (
               <div key={prod._id}>
                 <Link to={`/hombre/${prod._id}`}>
@@ -45,12 +44,6 @@ const Hombre = () => {
                   </Card>
                 </Link>
               </div>
-=======
-            {products.map((product) => (
-              <Link className="no-underline" to={`/hombre/${product._id}`} key={product._id}>
-                <CardProduct  product={product} />
-              </Link>
->>>>>>> 12cb5bb6b3b6cb469d46c6af386f5a282e255177
             ))}
           </CardGroup>
         </Col>

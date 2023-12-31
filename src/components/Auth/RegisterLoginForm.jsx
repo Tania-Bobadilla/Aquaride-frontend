@@ -5,6 +5,8 @@ import UserContext from "../../context/Users/UserContext"
 import { Button, Card } from "react-bootstrap"
 
 const RegisterLoginForm = () => {
+    const [errorMessage, setErrorMessage] = useState("");
+    const [successMessage, setSuccessMessage] = useState("");
     // Para redirigir
     const navigate = useNavigate()
 
@@ -34,16 +36,35 @@ const RegisterLoginForm = () => {
     }
 
     //Para enviar el form
-    const handleSubmit = (event) => {
-        event.preventDefault()
+    const handleSubmit = async (event) => {
+        // event.preventDefault()
 
-        //Si esta en el register ejecut la funcion de registrar
-        if (signUp) {
-            registerUser(user)
-            navigate("/")
-        } else {
-            loginUser(user)
-            navigate("/")
+        // //Si esta en el register ejecut la funcion de registrar
+        // if (signUp) {
+        //     registerUser(user)
+        //     navigate("/")
+        // } else {
+        //     loginUser(user)
+        //     navigate("/")
+        // }
+        event.preventDefault();
+
+        try {
+            if (signUp) {
+                await registerUser(user);
+                console.log("Registro exitoso")
+                setSuccessMessage("Registro exitoso");
+            } else {
+                await loginUser(user);
+                console.log("Inicio de sesión exitoso")
+                setSuccessMessage("Inicio de sesión exitoso");
+            }
+            setErrorMessage(""); // Limpiar cualquier mensaje de error existente
+            navigate("/");
+        } catch (error) {
+            console.log("Error")
+            setErrorMessage("Error en el inicio de sesión o registro");
+            setSuccessMessage("");
         }
     }
 
@@ -51,6 +72,8 @@ const RegisterLoginForm = () => {
     const changeMode = () => {
         setSignUp(!signUp)
         setUser(initialValues)
+        setErrorMessage("");
+        setSuccessMessage("");
     }
 
     return (
@@ -111,6 +134,16 @@ const RegisterLoginForm = () => {
                         </div>
                         <Button type='submit'>{signUp ? "Registrarse" : "Login"}</Button>
                     </form >
+                    {successMessage && (
+                        <div className="alert alert-success mt-3">
+                            {successMessage}
+                        </div>
+                    )}
+                    {errorMessage && (
+                        <div className="alert alert-danger mt-3">
+                            {errorMessage}
+                        </div>
+                    )}
                 </Card.Body>
             </Card>
             <p>{signUp ? "¿Ya tienes cuenta?" : "¿No tienes cuenta?"}</p>

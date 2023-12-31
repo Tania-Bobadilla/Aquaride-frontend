@@ -22,7 +22,7 @@ const ProductProvider = ({ children }) => {
     const [productState, dispatch] = useReducer(productReducer, initialState)
 
     // Obtener productos hombre
-    const getProductshombre = async() => {
+    const getProductshombre = async () => {
         const response = await axiosClient.get("/ropa_de_hombre")
         const productos = response.data.info;
 
@@ -32,10 +32,8 @@ const ProductProvider = ({ children }) => {
         })
     }
 
-<<<<<<< HEAD
     // Obtener productos mujer
-
-    const getProductsmujer = async() => {
+    const getProductsmujer = async () => {
         const response = await axiosClient.get("/ropa_de_mujer")
         const productos = response.data.info;
 
@@ -45,9 +43,8 @@ const ProductProvider = ({ children }) => {
         })
     }
 
-     // Obtener productos niños
-
-     const getProductsniños = async() => {
+    // Obtener productos niños
+    const getProductsniños = async () => {
         const response = await axiosClient.get("ropa_de_ninos")
         const productos = response.data.info;
 
@@ -57,9 +54,8 @@ const ProductProvider = ({ children }) => {
         })
     }
 
-      // Obtener productos accesorios
-
-      const getProductsaccesorios = async() => {
+    // Obtener productos accesorios
+    const getProductsaccesorios = async () => {
         const response = await axiosClient.get("/accesorios")
         const productos = response.data.info;
 
@@ -69,9 +65,8 @@ const ProductProvider = ({ children }) => {
         })
     }
 
-     // Obtener productos surf
-
-     const getProductssurf = async() => {
+    // Obtener productos surf
+    const getProductssurf = async () => {
         const response = await axiosClient.get("/tablas_de_surf")
         const productos = response.data.info;
 
@@ -81,15 +76,6 @@ const ProductProvider = ({ children }) => {
         })
     }
 
-
-    return (
-        <ProductContext.Provider value={{
-            getProductshombre,
-            getProductsmujer,
-            getProductsniños,
-            getProductsaccesorios,
-            getProductssurf,
-=======
     // Obtener producto por ID
     const getProductById = async(id) => {
         try {
@@ -98,39 +84,96 @@ const ProductProvider = ({ children }) => {
             console.log(productInfo)
             dispatch({
                 type: "GET_PRODUCT",
-                payload: productInfo 
+                payload: productInfo
             })
         } catch (error) {
             console.log(error)
         }
-    } 
+    }
+
+    const getWomanById = async(id) => {
+        try {
+            const response = await axiosClient.get(`/ropa_de_mujer/${id}`);
+            const productInfo = response.data.womenClothes;
+            console.log(productInfo)
+            dispatch({
+                type: "GET_PRODUCT",
+                payload: productInfo
+            })
+        } catch (error) {
+            console.log(error)
+        }
+    }
+
+    const getKidById = async(id) => {
+        try {
+            const response = await axiosClient.get(`/ropa_de_ninos/${id}`);
+            const productInfo = response.data.kidClothes
+            console.log(productInfo)
+            dispatch({
+                type: "GET_PRODUCT",
+                payload: productInfo
+            })
+        } catch (error) {
+            console.log(error)
+        }
+    }
+
+    const getSurfById = async(id) => {
+        try {
+            const response = await axiosClient.get(`/tablas_de_surf/${id}`);
+            const productInfo = response.data.surf;
+            console.log(productInfo)
+            dispatch({
+                type: "GET_PRODUCT",
+                payload: productInfo
+            })
+        } catch (error) {
+            console.log(error)
+        }
+    }
+
+    const getAccById = async(id) => {
+        try {
+            const response = await axiosClient.get(`/accesorios/${id}`);
+            const productInfo = response.data.accesories
+            console.log(productInfo)
+            dispatch({
+                type: "GET_PRODUCT",
+                payload: productInfo
+            })
+        } catch (error) {
+            console.log(error)
+        }
+    }
+
+    const reduceStock = async (cartItems) => {
+        const productos = {cartItems}
+        const result = await axiosClient.put("/reduceStock", productos)
+        console.log(result)
+    }
 
     return (
         <ProductContext.Provider value={{
-            getProducts,
+            getProductshombre,
+            getProductsmujer,
+            getProductsniños,
+            getProductsaccesorios,
+            getProductssurf,
             getProductById,
->>>>>>> 12cb5bb6b3b6cb469d46c6af386f5a282e255177
+            getWomanById,
+            getKidById,
+            getSurfById,
+            getAccById,
+
+            reduceStock,
+
             products: productState.products,
             product: productState.product
         }}>
             {children}
         </ProductContext.Provider>
     )
-
-    
-
-
-
-
-
-
-
-
-
-
-
-
-
 }
 
 export default ProductProvider

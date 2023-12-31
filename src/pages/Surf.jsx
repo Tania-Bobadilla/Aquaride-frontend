@@ -34,7 +34,7 @@ const Surf = () => {
           <CardGroup>
             {products.map((prod) => (
               <div key={prod._id}>
-                <Link to={`/hombre/${prod._id}`}>
+                <Link to={`/surf/${prod._id}`}>
                   <Card style={{ width: '350px' }} >
                     <Card.Img variant="top" src={prod.image} />
                     <Card.Body>
