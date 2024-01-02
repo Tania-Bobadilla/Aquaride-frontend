@@ -24,8 +24,7 @@ const CartDropdown = () => {
                 <div className="cart-items">
                     {cartItems ? (cartItems.map((cartItem) => (
                         <CartItem key={cartItem._id} cartItem={cartItem} />
-                    ))) :
-                        <span className="empty-message">Empty Cart</span>
+                    ))) : <span className="empty-message">Empty Cart</span>
                     }
                 </div>
                 <Button onClick={goToCheckout}>Go to checkout</Button>

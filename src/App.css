@@ -144,10 +144,17 @@ footer .copy {
     width: 20%;
     margin-bottom: 10px;
 }
+.categories a {
+    text-decoration: none;
+    color: #275E63;
+    text-transform: uppercase;
+}
+.categories a:hover {
+    text-decoration: underline;
+}
 .categories h6 {
     font-size: 20px;
     font-weight: 500;
-    text-transform: uppercase;
 }
 /*DESTACADOS*/
 .destacados {
@@ -158,6 +165,16 @@ footer .copy {
     font-size: 46px;
     font-weight: 900;
     text-transform: uppercase;
+}
+.destacados .btn-outline-primary {
+    margin-top: 10px;
+    border-color: #275E63;
+    color: #275E63;
+}
+.destacados .btn-outline-primary:hover {
+    color: #FFFFFF;
+    background-color: #275E63;
+    border-color: #275E63;
 }
 /*ABOUT*/
 .about {
@@ -182,26 +199,14 @@ footer .copy {
     font-weight: medium;
     text-align: left;
 }
-.about .btn-outline-primary {
-    width: 15%;
-    border: #275E63 1px solid;
-    color: #275E63;
-    text-transform: uppercase;
-    margin-top: 15px;
-}
-.about .btn-outline-primary:hover {
-    background-color: #275E63;
-    border: #275E63 1px solid;
-    color: #FFFFFF;
-}
 /*SERVICES*/
 .services {
     margin-top: 10px;
-    padding: 25px;
+    padding: 40px;
     color: #275E63;
 }
 .services img {
-    height: 4.5vw;
+    height: 5vw;
 }
 .services h5 {
     font-size: 28px;
@@ -404,21 +409,156 @@ footer .copy {
     background-color: rgb(15, 63, 66);
 }
 /*--------------------------------------------------------*/
-/*CARD PRODUCT*/
-.card-prod .card {
-    width: 18rem;   
-    background-color: #FFFFFF;
+/* CATALOGO */
+.catalogo {
+    padding: 50px;
+}
+.catalogo h2 {
+    font-size: 46px;
+    font-weight: 900;
+    text-transform: uppercase;
+    color: #275E63;
+    margin-bottom: 20px;
+}
+/* LINKS CAT */
+.catalogo h4 {
+    color: #275E63;
+    font-size: 32px;
+    font-weight: 900;
+    text-transform: uppercase;
+}
+.catalogo .btn-link {
+    text-decoration: none;
+    border-color:#275E63;
     color: #275E63;
 }
-.card-prod .card img {
-    height: 45vh;
+.catalogo .btn-group-vertical {
+    width: 80%;
 }
-.card-prod .card .card-title {
-    font-size: 20px;
-    font-weight: 600;
-    text-transform: uppercase;
-    margin-bottom: 15px;
-}
-.card-prod a {
+.catalogo .btn-link {
     text-decoration: none;
+    border-color:#275E63;
+    color: #275E63;
+}
+.catalogo .btn-link:hover {
+    text-decoration: none;
+    border-color:#275E63;
+    color: #FFFFFF;
+    background-color: #275E63;
+}
+/* PRODS */
+.catalogo a {
+    text-decoration: none;
+}
+.catalogo .card {
+    width: 340px;
+    height: 450px;
+    margin: 5px;
+}
+.catalogo .card img{
+    height: 350px;
+}
+.catalogo .card-title {
+    text-transform: uppercase;
+    color: #275E63;
+    font-size: 24px;
+}
+.catalogo .card-text {
+    font-size: 20px;
+    font-weight: 700;
+}
+/*--------------------------------------------------------*/
+/* PRODUCTO */
+.product {
+    padding: 50px;
+}
+.product a {
+    text-decoration: none;
+    color: #275E63;
+}
+.product  a:hover {
+    text-decoration: underline;
+}
+.product img {
+    width: 100%;
+}
+.product h2 {
+    font-size: 46px;
+    font-weight: 900;
+    text-transform: uppercase;
+    color: #275E63;
+    text-align: left;
+}
+.product p {
+    text-align: left;
+    font-size: 17px;
+}
+.product h4 {
+    text-align: left;
+    font-size: 28px;
+}
+.product h5{
+    text-align: left;
+    font-size: 28px;
+    font-weight: 500;
+    color: #275E63;
+    text-transform: uppercase;
+}
+.product .btn-wrap {
+    text-align: left;
+}
+.product .btn {
+    width: 50%;
+    background-color: #275E63;
+    border-color: #275E63;
+    text-transform: uppercase;
+}
+.product .btn:hover {
+    border: rgb(15, 63, 66) 1px solid;
+    background-color: rgb(15, 63, 66);
+}
+/*--------------------------------------------------------*/
+/* CONTACT */
+.contact {
+    padding: 25px;
+}
+.contact .card {
+    margin: 5px;
+}
+.contact .card-header {
+    text-transform: uppercase;
+    color: #275E63;
+    font-size: 24px;
+    font-weight: 500;
+    width: 100%;
+}
+.contact .mb-3 {
+    text-align: left;
+}
+.contact label {
+    font-weight: 500;
+    color: #275E63;
+}
+.contact input {
+    text-align: left;
+}
+.contact textarea {
+    text-align: left;
+}
+.contact .btn-primary {
+    width: 30%;
+    background-color: #275E63;
+    border-color: #275E63;
+    text-transform: uppercase;
+}
+.contact .btn-primary:hover {
+    border: rgb(15, 63, 66) 1px solid;
+    background-color: rgb(15, 63, 66);
+}
+.contact .datos .card-title {
+    color: #275E63;
+    font-size: 18px;
+}
+.contact .datos .card-text {
+    font-size: 16px;
 }

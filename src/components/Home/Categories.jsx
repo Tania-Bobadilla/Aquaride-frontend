@@ -1,4 +1,5 @@
-import { Col, NavLink, Row } from 'react-bootstrap'
+import { Col, Row } from 'react-bootstrap'
+import { NavLink } from 'react-router-dom'
 
 import men from "../../assets/category-icons/men.png"
 import women from "../../assets/category-icons/women.png"
@@ -9,7 +10,7 @@ import surf from "../../assets/category-icons/surf.png"
 const Categories = () => {
     return (
         <section className='categories'>
-            <h2>Categorias</h2>
+            <h2>Categorías</h2>
             <Row>
                 <Col>
                     <NavLink to="/hombre">

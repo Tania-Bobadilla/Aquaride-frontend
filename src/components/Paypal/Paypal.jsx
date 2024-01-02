@@ -1,12 +1,13 @@
 import { PayPalScriptProvider, PayPalButtons } from "@paypal/react-paypal-js";
 //npm i @paypal/react-paypal-js
 
-//Context
 import { useContext } from "react";
 import CartContext from "../../context/Cart/CartContext"
 import ProductContext from "../../context/Products/ProductContext"
+import { useNavigate } from "react-router-dom";
 
 export default function Paypal() {
+    const navigate = useNavigate()
 
     const { cartTotal, clearItemToCheckout, cartItems } = useContext(CartContext)
     const { reduceStock } = useContext(ProductContext)
@@ -33,6 +34,7 @@ export default function Paypal() {
                         alert(`Transaction completed by ${name}`);
                         reduceStock(cartItems)
                         clearItemToCheckout()
+                        navigate("/")
                     })
                 }}
             />

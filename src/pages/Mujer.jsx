@@ -1,8 +1,6 @@
-import axios from "axios"
-import { useContext, useEffect, useState } from "react"
-import { Button, Card, CardGroup, Col, Row } from "react-bootstrap"
+import { useContext, useEffect } from "react"
+import { Button, ButtonGroup, Card, CardGroup, Col, Row } from "react-bootstrap"
 import ProductContext from "../context/Products/ProductContext"
-import axiosClient from '../config/axiosClient'
 import { Link } from "react-router-dom"
 
 const Mujer = () => {
@@ -16,31 +14,30 @@ const Mujer = () => {
   }, [])
 
   return (
-    <main>
+    <main className="catalogo">
       <Row>
         <h2>Catálogo de Mujer</h2>
 
         <Col md={3}>
-          <h2>Categorías</h2>
-          <ul>
-            <li>Hombre</li>
-            <li>Mujer</li>
-            <li>Niños</li>
-            <li>Accesorios</li>
-            <li>Surf</li>
-          </ul>
+          <h4>Categorías</h4>
+          <ButtonGroup vertical>
+            <Button variant="link" href="/hombre">Hombre</Button>
+            <Button variant="link" href="/mujer">Mujer</Button>
+            <Button variant="link" href="/niños">Niños</Button>
+            <Button variant="link" href="/accesorios">Accesorios</Button>
+            <Button variant="link" href="/surf">Surf</Button>
+          </ButtonGroup>
         </Col>
         <Col md={9}>
           <CardGroup>
             {products.map((prod) => (
               <div key={prod._id}>
                 <Link to={`/mujer/${prod._id}`}>
-                  <Card style={{ width: '350px' }} >
+                  <Card>
                     <Card.Img variant="top" src={prod.image} />
                     <Card.Body>
                       <Card.Title>{prod.name}</Card.Title>
-                      <Card.Text>{prod.price}</Card.Text>
-                      <Button variant="primary">Agregar al Carro</Button>
+                      <Card.Text>$ {prod.price}</Card.Text>
                     </Card.Body>
                   </Card>
                 </Link>

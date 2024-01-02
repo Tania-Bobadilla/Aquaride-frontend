@@ -1,9 +1,6 @@
 import { Col, Row } from 'react-bootstrap'
 import logo from '../../assets/logo-dark.png'
 
-import LocationOnIcon from '@mui/icons-material/LocationOn'
-import EmailIcon from '@mui/icons-material/Email'
-import LocalPhoneIcon from '@mui/icons-material/LocalPhone'
 import InstagramIcon from '@mui/icons-material/Instagram'
 import FacebookIcon from '@mui/icons-material/Facebook';
 import YouTubeIcon from '@mui/icons-material/YouTube'
@@ -14,16 +11,9 @@ const Footer = () => {
       <div>
         {/* Logo */}
         <img src={logo} alt="Logo" style={{ width: "100px" }} />
-
-        {/* Contacto */}
-        <h6>Contacto</h6>
-        <p>{<LocationOnIcon />} Av. Andrés Bello 2425, 7510689 Providencia, Región Metropolitana, Chile</p>
-        <p>{<EmailIcon />} aquaride@gmail.com</p>
-        <p>{<LocalPhoneIcon />} +56 9 1234 5678</p>
       </div>
-
       <hr />
-      
+
       <div>
         <Row>
           <Col>
@@ -31,7 +21,7 @@ const Footer = () => {
             <h6>Información</h6>
             <a href="#"><p>Sobre Nosotros</p></a>
             <a href="#"><p>Despachos</p></a>
-            <a href="#"><p>Contacto</p></a>
+            <a href="/contacto"><p>Contacto</p></a>
           </Col>
           <Col>
             {/* Columna 2 */}

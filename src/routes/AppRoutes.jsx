@@ -8,7 +8,6 @@ import Auth from "../pages/Auth"
 import Profile from "../pages/Profile"
 
 import Checkout from "../pages/Checkout"
-import Cart from "../pages/Cart"
 
 import Hombre from "../pages/Hombre"
 import Mujer from "../pages/Mujer"
@@ -34,7 +33,6 @@ const AppRoutes = () => {
                     <Route path="/contacto" element={<Contacto />} />
 
                     <Route path="/checkout" element={<Checkout />} />
-                    <Route path="/cart" element={<Cart />} />
 
                     <Route path="/hombre" element={<Hombre />} />
                     <Route path="/mujer" element={<Mujer />} />

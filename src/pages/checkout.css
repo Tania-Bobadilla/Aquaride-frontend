@@ -15,15 +15,18 @@
     border-bottom: 1px solid darkgrey;
 }
 .checkout-container .checkout-header .header-block {
-    text-transform: capitalize;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 20px;
     width: 23%;
+    color: #275E63;
 }  
 .checkout-container .checkout-header .header-block &:last-child {
     width: 8%
 }
-
 .checkout-container .total {
     margin-top: 30px;
     margin-left: auto;
     font-size: 36px;
+    font-weight: 900;
 }

@@ -1,94 +1,74 @@
+import { Card, Col, Container, Row } from "react-bootstrap";
 
-const ContactUsView = () => {
-  const onSubmit = async (values) => {
-    alert(JSON.stringify(values));
-  };
+import LocationOnIcon from '@mui/icons-material/LocationOn'
+import EmailIcon from '@mui/icons-material/Email'
+import LocalPhoneIcon from '@mui/icons-material/LocalPhone'
 
+const Contact = () => {
   return (
-    <div className="container my-3">
-      <div className="row g-3">
-        <div className="col-md-8">
-          <div className="card">
-            <div className="card-header">
-              <i className="bi bi-envelope"></i> Contactanos
-            </div>
-            <div className="container mt-5">
-      <h2 className="mb-4">Contacto</h2>
-      <form>
-        <div className="mb-3">
-          <label htmlFor="nombre" className="form-label">Nombre:</label>
-          <input type="text" className="form-control" id="nombre" />
-        </div>
-        <div className="mb-3">
-          <label htmlFor="email" className="form-label">Correo:</label>
-          <input type="email" className="form-control" id="email" />
-        </div>
-        <div className="mb-3">
-          <label htmlFor="telefono" className="form-label">Teléfono:</label>
-          <input type="tel" className="form-control" id="telefono" />
-        </div>
-        <div className="mb-3">
-          <label htmlFor="asunto" className="form-label">Asunto:</label>
-          <textarea className="form-control" id="asunto" rows="4"></textarea>
-        </div>
-        <button type="submit" className="btn btn-primary">Enviar</button>
-      </form>
-    </div>
-          </div>
-        </div>
-        <div className="col-md-4">
-          <div className="card mb-3">
-            <div className="card-header">
-              <i className="bi bi-building"></i> Dirección
-            </div>
-            <div className="card-body">
-              <h6 className="card-title border-bottom border-dark pb-2">
-                Head Office
-              </h6>
-              <address>
-                <strong>Twitter, Inc.</strong>
-                <br />
-                1355 Market St, Suite 900
-                <br />
-                San Francisco, CA 94103
-                <br />
-                <i className="bi bi-telephone"></i>{" "}
-                <abbr title="Phone">P:</abbr> (123) 456-7890
-              </address>
-              <h6 className="card-title border-bottom border-dark pb-2">
-                Development Office
-              </h6>
-              <address>
-                <strong>Twitter, Inc.</strong>
-                <br />
-                1355 Market St, Suite 900
-                <br />
-                San Francisco, CA 94103
-                <br />
-                <i className="bi bi-telephone"></i>{" "}
-                <abbr title="Phone">P:</abbr> (123) 456-7890
-              </address>
-            </div>
-          </div>
-          <div className="card">
-            <div className="google-maps">
-              <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d313635.5491853188!2d-122.57606416467848!3d37.20933611930123!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8085815c67b3754d%3A0xb42714f3436732f2!2s1355%20Market%20St%20%23900%2C%20San%20Francisco%2C%20CA%2094103%2C%20USA!5e0!3m2!1sen!2sin!4v1599193189366!5m2!1sen!2sin"
-                width={400}
-                height={300}
-                frameBorder={0}
-                style={{ border: 0 }}
-                allowFullScreen
-                aria-hidden="false"
-                tabIndex={0}
-                title="Location"
-              />
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+    <>
+      <main className="contact">
+        <Container>
+          <Row>
+            <Col md={7}>
+              <Card>
+                <Card.Header>Contactanos</Card.Header>
+                <Card.Body>
+                  <form>
+                    <div className="mb-3">
+                      <label htmlFor="nombre" className="form-label">Nombre:</label>
+                      <input type="text" className="form-control" id="contact-nombre" />
+                    </div>
+                    <div className="mb-3">
+                      <label htmlFor="email" className="form-label">Correo:</label>
+                      <input type="email" className="form-control" id="contact-email" />
+                    </div>
+                    <div className="mb-3">
+                      <label htmlFor="asunto" className="form-label">Mensaje:</label>
+                      <textarea className="form-control" id="contact-asunto" rows="4"></textarea>
+                    </div>
+                    <button type="submit" className="btn btn-primary">Enviar</button>
+                  </form>
+                </Card.Body>
+              </Card>
+            </Col>
+            <Col md={5}>
+              <Card className="datos">
+                <Card.Header>Información</Card.Header>
+                <Card.Body>
+                  <Card.Title>Dirección</Card.Title>
+                  <Card.Text>
+                    {<LocationOnIcon />} Av. Andrés Bello 2425, 7510689 Providencia, Región Metropolitana, Chile
+                  </Card.Text>
+                  <Card.Title>Email</Card.Title>
+                  <Card.Text>
+                    {<EmailIcon />} aquaride@gmail.com
+                  </Card.Text>
+                  <Card.Title>Teléfono</Card.Title>
+                  <Card.Text>
+                    {<LocalPhoneIcon />} +56 9 1234 5678e
+                  </Card.Text>
+                </Card.Body>
+              </Card>
+              <Card>
+                <div className="google-maps">
+                  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3330.2015635150024!2d-70.60896502458522!3d-33.41798899584983!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9662cf69d4854951%3A0x9a87ef2fefaad0df!2sCostanera%20Center!5e0!3m2!1ses!2scl!4v1704221090303!5m2!1ses!2scl"
+                    width={500}
+                    height={250}
+                    style={{ border: 0 }}
+                    allowFullScreen=""
+                    loading="lazy"
+                    referrerPolicy="no-referrer-when-downgrade">
+                  </iframe>
+                </div>
+              </Card>
+            </Col>
+          </Row>
+        </Container>
+      </main>
+
+    </>
   );
 };
 
-export default ContactUsView;
+export default Contact;
