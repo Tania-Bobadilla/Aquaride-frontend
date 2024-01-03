@@ -1,9 +1,8 @@
 import { Button, Nav, Navbar } from "react-bootstrap"
 import { NavLink } from "react-router-dom"
-import logo from '../../assets/logo-dark.png'
+import logo from '../../assets/logo.svg'
 
 import AccountCircleIcon from '@mui/icons-material/AccountCircle'
-import ShoppingCartIcon from '@mui/icons-material/ShoppingCart'
 
 import { useContext } from "react"
 import UserContext from "../../context/Users/UserContext"

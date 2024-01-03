@@ -1,5 +1,5 @@
 import { Col, Row } from 'react-bootstrap'
-import logo from '../../assets/logo-dark.png'
+import logo from '../../assets/logo.svg'
 
 import InstagramIcon from '@mui/icons-material/Instagram'
 import FacebookIcon from '@mui/icons-material/Facebook';
@@ -10,7 +10,7 @@ const Footer = () => {
     <footer>
       <div>
         {/* Logo */}
-        <img src={logo} alt="Logo" style={{ width: "100px" }} />
+        <img src={logo} alt="Logo"/>
       </div>
       <hr />
 
