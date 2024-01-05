@@ -7,13 +7,17 @@ import { useReducer } from "react"
 import { useNavigate } from "react-router-dom"
 
 const UserProvider = ({ children }) => {
+    let loginError = ""
+    let registerError = ""
+
     // Para redireccion
     const navigate = useNavigate()
 
     //Estado inicial
     const inicialState = {
         infoUser: [],
-        authStatus: false
+        authStatus: false,
+        error: null
     }
 
     //useReducer
@@ -32,9 +36,19 @@ const UserProvider = ({ children }) => {
                     type: "REGISTER/LOGIN",
                     payload: userLogin.data
                 })
+                // Clear the error after successful login
+                dispatch({ type: "CLEAR_ERROR" });
             }
+
+            // Navigate only when login is successful
+            navigate("/");
         } catch (error) {
-            console.log(error)
+            loginError = error.response.data.message
+            dispatch({
+                type: "SET_ERROR",
+                payload: loginError // Set the error in the state
+            });
+            console.log(loginError)
         }
     }
     // REGISTER
@@ -50,8 +64,16 @@ const UserProvider = ({ children }) => {
                     type: "REGISTER/LOGIN",
                     payload: newUser.token
                 })
+                navigate("/")
+            } else {
+                registerError = newUser.massage
+                dispatch({
+                    type: "SET_ERROR",
+                    payload: registerError // Set the error in the state
+                });
+                console.log(registerError)
             }
-            console.log(newUser.message);
+            console.log(newUser);
         } catch (error) {
             console.log(error);
         }
@@ -105,14 +127,14 @@ const UserProvider = ({ children }) => {
     // DELETE USER 
     const deleteUser = async (id) => {
         try {
-          // Funcion para el back pasando el id por el body y hacer que lo reconosca
-          const userDelete = await axiosClient.delete("/user", { data: { id: id } });
-          console.log(userDelete.data);
-          userState.authStatus = false
+            // Funcion para el back pasando el id por el body y hacer que lo reconosca
+            const userDelete = await axiosClient.delete("/user", { data: { id: id } });
+            console.log(userDelete.data);
+            signOut()
         } catch (error) {
-          console.log(error);
+            console.log(error);
         }
-      }
+    }
 
     return (
         <UserContext.Provider value={{
@@ -123,7 +145,8 @@ const UserProvider = ({ children }) => {
             verifyToken,
             signOut,
             editUser,
-            deleteUser
+            deleteUser,
+            error: userState.error
         }}>{children}</UserContext.Provider>
     )
 }

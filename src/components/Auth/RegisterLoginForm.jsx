@@ -1,20 +1,15 @@
 import { useContext, useState } from "react"
-import { useNavigate } from "react-router-dom"
 import UserContext from "../../context/Users/UserContext"
 
-import { Button, Card } from "react-bootstrap"
+import { Alert, Button, Card, Toast } from "react-bootstrap"
 
 const RegisterLoginForm = () => {
-    const [errorMessage, setErrorMessage] = useState("");
-    const [successMessage, setSuccessMessage] = useState("");
-    // Para redirigir
-    const navigate = useNavigate()
-
     //Para trackear si estamos en login o register (false = login // true = register)
     const [signUp, setSignUp] = useState(false)
+    const [show, setShow] = useState(false);
 
     // "importar" la funcion de register
-    const { registerUser, loginUser } = useContext(UserContext)
+    const { registerUser, loginUser, error } = useContext(UserContext)
 
     //valores iniciales para los input
     const initialValues = {
@@ -37,34 +32,17 @@ const RegisterLoginForm = () => {
 
     //Para enviar el form
     const handleSubmit = async (event) => {
-        // event.preventDefault()
+        event.preventDefault()
 
-        // //Si esta en el register ejecut la funcion de registrar
-        // if (signUp) {
-        //     registerUser(user)
-        //     navigate("/")
-        // } else {
-        //     loginUser(user)
-        //     navigate("/")
-        // }
-        event.preventDefault();
-
-        try {
-            if (signUp) {
-                await registerUser(user);
-                console.log("Registro exitoso")
-                setSuccessMessage("Registro exitoso");
-            } else {
-                await loginUser(user);
-                console.log("Inicio de sesión exitoso")
-                setSuccessMessage("Inicio de sesión exitoso");
+        //Si esta en el register ejecut la funcion de registrar
+        if (signUp) {
+            registerUser(user)
+        } else {
+            try {
+                loginUser(user);
+            } catch (err) {
+                console.log(err);
             }
-            setErrorMessage(""); // Limpiar cualquier mensaje de error existente
-            navigate("/");
-        } catch (error) {
-            console.log("Error")
-            setErrorMessage("Error en el inicio de sesión o registro");
-            setSuccessMessage("");
         }
     }
 
@@ -72,8 +50,6 @@ const RegisterLoginForm = () => {
     const changeMode = () => {
         setSignUp(!signUp)
         setUser(initialValues)
-        setErrorMessage("");
-        setSuccessMessage("");
     }
 
     return (
@@ -82,6 +58,10 @@ const RegisterLoginForm = () => {
                 {/* Cambiar el titulo */}
                 {signUp ? "Registrate" : "Login"}
             </h2>
+            {/* Display error message */}
+            {error &&
+                <Alert variant="danger">{error}</Alert>
+            }
             <Card>
                 <Card.Body>
                     <form className="form-register" onSubmit={handleSubmit}>
@@ -134,16 +114,6 @@ const RegisterLoginForm = () => {
                         </div>
                         <Button type='submit'>{signUp ? "Registrarse" : "Login"}</Button>
                     </form >
-                    {successMessage && (
-                        <div className="alert alert-success mt-3">
-                            {successMessage}
-                        </div>
-                    )}
-                    {errorMessage && (
-                        <div className="alert alert-danger mt-3">
-                            {errorMessage}
-                        </div>
-                    )}
                 </Card.Body>
             </Card>
             <p>{signUp ? "¿Ya tienes cuenta?" : "¿No tienes cuenta?"}</p>

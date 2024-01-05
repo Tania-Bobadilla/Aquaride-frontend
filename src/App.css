@@ -428,24 +428,30 @@ footer .copy {
     font-weight: 900;
     text-transform: uppercase;
 }
-.catalogo .btn-link {
+.catalogo .btn-outline-primary {
     text-decoration: none;
     border-color:#275E63;
     color: #275E63;
+    width: 100%;
+    border-radius: 0;
 }
-.catalogo .btn-group-vertical {
-    width: 80%;
-}
-.catalogo .btn-link {
-    text-decoration: none;
-    border-color:#275E63;
-    color: #275E63;
-}
-.catalogo .btn-link:hover {
+.catalogo .btn-outline-primary:hover {
     text-decoration: none;
     border-color:#275E63;
     color: #FFFFFF;
     background-color: #275E63;
+}
+.catalogo .first {
+    border-radius: 5px 5px 0 0;
+}
+.catalogo .last {
+    border-radius: 0 0 5px 5px;
+}
+.catalogo .category{
+    width: 100%;
+}
+.catalogo .btn-group-vertical {
+    width: 80%;
 }
 /* PRODS */
 .catalogo a {
@@ -453,7 +459,7 @@ footer .copy {
 }
 .catalogo .card {
     width: 340px;
-    height: 450px;
+    height: 98%;
     margin: 5px;
 }
 .catalogo .card img{
@@ -464,9 +470,11 @@ footer .copy {
     color: #275E63;
     font-size: 24px;
 }
-.catalogo .card-text {
+.catalogo .card-footer {
     font-size: 20px;
     font-weight: 700;
+    background-color: #FFFFFF;
+    border: 0;
 }
 /*--------------------------------------------------------*/
 /* PRODUCTO */

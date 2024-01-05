@@ -1,7 +1,7 @@
 import { useContext, useEffect } from "react"
 import { Button, ButtonGroup, Card, CardGroup, Col, Row } from "react-bootstrap"
 import ProductContext from "../context/Products/ProductContext"
-import { Link } from "react-router-dom"
+import { Link, NavLink } from "react-router-dom"
 
 const Niños = () => {
   const { getProductsniños, products } = useContext(ProductContext)
@@ -20,11 +20,11 @@ const Niños = () => {
         <Col md={3}>
           <h4>Categorías</h4>
           <ButtonGroup vertical>
-            <Button variant="link" href="/hombre">Hombre</Button>
-            <Button variant="link" href="/mujer">Mujer</Button>
-            <Button variant="link" href="/niños">Niños</Button>
-            <Button variant="link" href="/accesorios">Accesorios</Button>
-            <Button variant="link" href="/surf">Surf</Button>
+            <NavLink to="/hombre" className="category"><Button variant="outline-primary" className="first">Hombre</Button></NavLink>
+            <NavLink to="/mujer" className="category"><Button variant="outline-primary">Mujer</Button></NavLink>
+            <NavLink to="/niños" className="category"><Button variant="outline-primary">Niños</Button></NavLink>
+            <NavLink to="/accesorios" className="category"><Button variant="outline-primary">Accesorios</Button></NavLink>
+            <NavLink to="/surf" className="category"><Button variant="outline-primary" className="last">Surf</Button></NavLink>
           </ButtonGroup>
         </Col>
         <Col md={9}>
@@ -36,8 +36,8 @@ const Niños = () => {
                     <Card.Img variant="top" src={prod.image} />
                     <Card.Body>
                       <Card.Title>{prod.name}</Card.Title>
-                      <Card.Text>$ {prod.price}</Card.Text>
                     </Card.Body>
+                    <Card.Footer>$ {prod.price}</Card.Footer>
                   </Card>
                 </Link>
               </div>

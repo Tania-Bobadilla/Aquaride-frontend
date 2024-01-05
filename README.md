@@ -6,11 +6,10 @@ El proyecto se enfoca en el desarrollo de una aplicación E-commerce con rutas d
 
 Este proyecto fue realizado en un grupo de 4 personas:
 
-<!-- [<img src="https://github.com/Tania-Bobadilla.png" width="60px;"/>](https://github.com/Tania-Bobadilla)
-[<img src="https://github.com/
-{{}}.png" width="60px;"/>](https://github.com/{{}})
+[<img src="https://github.com/Tania-Bobadilla.png" width="60px;"/>](https://github.com/Tania-Bobadilla)
+[<img src="https://github.com/Gruman670.png" width="60px;"/>](https://github.com/Gruman670)
 [<img src="https://github.com/IgnacioAndres07.png" width="60px;"/>](https://github.com/IgnacioAndres07)
-[<img src="https://github.com/FerRamirez99.png" width="60px;"/>](https://github.com/FerRamirez99) -->
+[<img src="https://github.com/FerRamirez99.png" width="60px;"/>](https://github.com/FerRamirez99)
 
 **Repositorio Backend del proyecto:** 
 https://github.com/Tania-Bobadilla/Ecommerce-backend
@@ -32,6 +31,7 @@ Para el desarrollo del proyecto se utilizaron diferentes tecnologías, tales com
 - React Slick: Carousel personalizado.
 - Material Icons: Para la incorporación de íconos.
 - Flaticon: Descarga de algunos iconos.
+- Unsplash: Imagenes.
 
 ### **Desarrollo**
 **Front-End**

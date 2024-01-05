@@ -1,6 +1,6 @@
 const userReducer = (state, action) => {
-    const {type, payload} = action
-    
+    const { type, payload } = action
+
     switch (type) {
         case "REGISTER/LOGIN":
             localStorage.setItem("token", payload.token)
@@ -8,6 +8,16 @@ const userReducer = (state, action) => {
                 ...state,
                 authStatus: true
             }
+        case "SET_ERROR":
+            return {
+                ...state,
+                error: action.payload
+            };
+        case "CLEAR_ERROR":
+            return {
+                ...state,
+                error: null
+            };
         case "INFO_USER":
             return {
                 ...state,
