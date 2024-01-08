@@ -1,12 +1,11 @@
 import { useContext, useState } from "react"
 import UserContext from "../../context/Users/UserContext"
 
-import { Alert, Button, Card, Toast } from "react-bootstrap"
+import { Alert, Button, Card } from "react-bootstrap"
 
 const RegisterLoginForm = () => {
     //Para trackear si estamos en login o register (false = login // true = register)
     const [signUp, setSignUp] = useState(false)
-    const [show, setShow] = useState(false);
 
     // "importar" la funcion de register
     const { registerUser, loginUser, error } = useContext(UserContext)

@@ -4,17 +4,22 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
-import { useContext, useEffect } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import ProductContext from '../../context/Products/ProductContext';
+import { Spinner } from 'react-bootstrap';
 
 const Carousel = () => {
   const { getProductssurf, products } = useContext(ProductContext)
+
+  const [loading, setLoading] = useState(false) 
 
   useEffect(() => {
     const productList = async () => {
       await getProductssurf()
     }
+    setLoading(true)
     productList()
+    
   }, [])
   
   // Configuracion carousel (mostrar puntos, mostrar 4 cards, cambiar de a 4 cards)
@@ -27,21 +32,22 @@ const Carousel = () => {
   }
   return (
     <div>
-      <div className='custom-carousel'>
-        <Slider {...settings}>
-          {products.map((item) => (
-            <div key={item.id} className="card">
-              <div className="top">
-                <img src={item.image} alt="Imagen producto" className='card-img-prod' />
+      { loading ? 
+        (<div className='custom-carousel'>
+          <Slider {...settings}>
+            {products.map((item) => (
+              <div key={item.id} className="card">
+                <div className="top">
+                  <img src={item.image} alt="Imagen producto" className='card-img-prod' />
+                </div>
+                <div className="info">
+                  <h6>{item.name}</h6>
+                  <p>$ {item.price}</p>
+                </div>
               </div>
-              <div className="info">
-                <h6>{item.name}</h6>
-                <p>$ {item.price}</p>
-              </div>
-            </div>
-          ))}
-        </Slider>
-      </div>
+            ))}
+          </Slider>
+        </div>) : (<Spinner animation="border" />)}
     </div>
   )
 }

@@ -95,7 +95,7 @@ const Profile = () => {
           <Card.Body>
             <Card.Title>{`${userName}`}</Card.Title>
             <Card.Subtitle>{userEmail}</Card.Subtitle>
-            <Button onClick={handleOpen}>Editar Ususario</Button>
+            <Button onClick={handleOpen}>{open ? "Cerrar" : "Editar Usuario"}</Button>
             <br />
             <Button variant="outline-warning" size="sm" onClick={handleShow}>Borrar Usuario</Button>
           </Card.Body>

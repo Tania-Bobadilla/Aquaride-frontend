@@ -27,17 +27,17 @@ Para el desarrollo del proyecto se utilizaron diferentes tecnologías, tales com
 - Aplicación Figma: Para el desarrollo del diseño inicial de la página web.
 
 ### **UI**
-- React Bootstrap: Incorporación de variados componentes del framework para agilizar el desarrollo del prototipo y que sea responsive.
+- React Bootstrap: Incorporación de variados componentes del framework para agilizar el desarrollo del prototipo.
 - React Slick: Carousel personalizado.
 - Material Icons: Para la incorporación de íconos.
-- Flaticon: Descarga de algunos iconos.
-- Unsplash: Imagenes.
+- Flaticon: Descarga de algunos íconos.
+- Unsplash: Imágenes.
 
 ### **Desarrollo**
 **Front-End**
 - Vite: Para la creación del entorno de desarrollo.
 - React: Para trabajar la UI en base a componentes.
-- React Router: Crear y gestionar rutas dinamicas.
+- React Router: Crear y gestionar rutas dinámicas.
 - Axios: Manejo de operaciones HTTP.
 
 **Back-End**

@@ -165,9 +165,7 @@ const ProductProvider = ({ children }) => {
             getKidById,
             getSurfById,
             getAccById,
-
             reduceStock,
-
             products: productState.products,
             product: productState.product
         }}>

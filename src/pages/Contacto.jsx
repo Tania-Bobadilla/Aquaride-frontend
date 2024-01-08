@@ -52,7 +52,8 @@ const Contact = () => {
               </Card>
               <Card>
                 <div className="google-maps">
-                  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3330.2015635150024!2d-70.60896502458522!3d-33.41798899584983!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9662cf69d4854951%3A0x9a87ef2fefaad0df!2sCostanera%20Center!5e0!3m2!1ses!2scl!4v1704221090303!5m2!1ses!2scl"
+                  <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3330.2015635150024!2d-70.60896502458522!3d-33.41798899584983!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9662cf69d4854951%3A0x9a87ef2fefaad0df!2sCostanera%20Center!5e0!3m2!1ses!2scl!4v1704221090303!5m2!1ses!2scl"
                     width={500}
                     height={250}
                     style={{ border: 0 }}

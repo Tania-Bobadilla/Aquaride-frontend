@@ -1,4 +1,3 @@
-/* eslint-disable react/prop-types */
 import CartContext from "./CartContext";
 import { useReducer } from "react";
 import { addCartItem, removeCartItem, clearCartItem } from "./cartFunction";
