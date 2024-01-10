@@ -99,7 +99,7 @@ footer .copy {
 /*WELOCOME CAROUSEL*/
 .welcome .carousel-inner img {
     width: 100%;
-    height: 70vh;
+    height: 80vh;
     box-shadow: inset 0 0 0 1000px rgba(0,0,0,.5);
 } 
 .welcome .carousel-caption {
@@ -463,7 +463,7 @@ footer .copy {
     margin: 5px;
 }
 .catalogo .card img{
-    height: 380px;
+    height: 420px;
 }
 .catalogo .card-title {
     text-transform: uppercase;
