@@ -34,8 +34,8 @@ const NavBar = () => {
             <Nav.Link as={NavLink} to="/hombre">HOMBRE</Nav.Link>
             <Nav.Link as={NavLink} to="/mujer">MUJER</Nav.Link>
             <Nav.Link as={NavLink} to="/niños">NIÑOS</Nav.Link>
-            <Nav.Link as={NavLink} to="/accesorios">ACCESORIOS</Nav.Link>
-            <Nav.Link as={NavLink} to="/surf">SURF</Nav.Link>
+            <Nav.Link as={NavLink} to="/accesorios">ACCESORIOS DE SURF</Nav.Link>
+            <Nav.Link as={NavLink} to="/surf">TABLAS DE SURF</Nav.Link>
             <Nav.Link as={NavLink} to="/contacto">CONTACTO</Nav.Link>
           </Nav>
 

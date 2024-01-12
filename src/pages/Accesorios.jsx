@@ -24,8 +24,8 @@ const Accesorios = () => {
             <NavLink to="/hombre" className="category"><Button variant="outline-primary" className="first">Hombre</Button></NavLink>
             <NavLink to="/mujer" className="category"><Button variant="outline-primary">Mujer</Button></NavLink>
             <NavLink to="/niños" className="category"><Button variant="outline-primary">Niños</Button></NavLink>
-            <NavLink to="/accesorios" className="category"><Button variant="outline-primary">Accesorios</Button></NavLink>
-            <NavLink to="/surf" className="category"><Button variant="outline-primary" className="last">Surf</Button></NavLink>
+            <NavLink to="/accesorios" className="category"><Button variant="outline-primary">Accesorios de Surf</Button></NavLink>
+            <NavLink to="/surf" className="category"><Button variant="outline-primary" className="last">Tablas de Surf</Button></NavLink>
           </ButtonGroup>
         </Col>
         <Col md={9}>

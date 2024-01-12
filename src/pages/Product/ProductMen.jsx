@@ -12,7 +12,7 @@ const ProductMen = () => {
   const { getProductById, product } = useContext(ProductContext)
   const { addItemToCart, cartCount } = useContext(CartContext)
 
-  const { name, stock, price, image, sku } = product;
+  const { name, stock, price, image, sku, details } = product;
 
   const handleAdd = () => { if (cartCount < stock) addItemToCart(product) }
 
@@ -47,7 +47,7 @@ const ProductMen = () => {
             </div>
             <hr />
             <h5>Descripción:</h5>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. A repudiandae consectetur, tenetur recusandae adipisci unde accusantium commodi laborum qui iure aut debitis quibusdam obcaecati nostrum ad eaque, autem aliquam labore!</p>
+            <p>{details}</p>
           </Col>
         </Row>
       </Container>

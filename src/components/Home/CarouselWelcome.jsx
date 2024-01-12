@@ -9,9 +9,9 @@ const CarouselWelcome = () => {
 
     return (
         <section className='welcome'>
-            <Carousel data-bs-theme="dark">
-                <Carousel.Item>
-                    <img src={img1} alt="" className='carousel-img' />
+            <Carousel data-bs-theme="dark" height="150%">
+                <Carousel.Item >
+                    <img src={img1} height="" className='carousel-img' />
                     <Carousel.Caption>
                         <h1>{titulo}</h1>
                         <h5>{msg}</h5>
