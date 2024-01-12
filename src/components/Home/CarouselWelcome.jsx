@@ -1,7 +1,7 @@
 import { Carousel } from 'react-bootstrap'
-import img1 from "../../assets/slide1.jpg"
-import img2 from "../../assets/slide2.jpg"
-import img3 from "../../assets/slide3.jpg"
+import img1 from "../../assets/AAA.jpg"
+import img2 from "../../assets/A.jpg"
+import img3 from "../../assets/C.jpg"
 
 const CarouselWelcome = () => {
     const titulo = "Aquaride"
@@ -9,9 +9,9 @@ const CarouselWelcome = () => {
 
     return (
         <section className='welcome'>
-            <Carousel data-bs-theme="dark" height="150%">
-                <Carousel.Item >
-                    <img src={img1} height="" className='carousel-img' />
+            <Carousel data-bs-theme="dark">
+                <Carousel.Item>
+                    <img src={img1} alt="" className='carousel-img' />
                     <Carousel.Caption>
                         <h1>{titulo}</h1>
                         <h5>{msg}</h5>
