@@ -4,11 +4,12 @@ Proyecto 5: E-commerce
 ## **Descripción:**
 El proyecto se enfoca en el desarrollo de una aplicación E-commerce con rutas de home, login/registro, perfil, listado de productos, producto individual, carrito y pasarela de pago; además de desarrollar el backend que se conectará con el front.
 
-Este proyecto fue realizado en un grupo de 4 personas: Tania Bobadilla, Ignacio Gomez, Rodrigo Velasquez y Fernanda Ramirez 
+Este proyecto fue realizado en un grupo de 4 personas: <br>
+Tania Bobadilla, Ignacio Gomez, Rodrigo Velasquez y Fernanda Ramirez 
 
 [<img src="https://github.com/Tania-Bobadilla.png" width="60px;"/>](https://github.com/Tania-Bobadilla)
-[<img src="https://github.com/Gruman670.png" width="60px;"/>](https://github.com/Gruman670)
 [<img src="https://github.com/IgnacioAndres07.png" width="60px;"/>](https://github.com/IgnacioAndres07)
+[<img src="https://github.com/Gruman670.png" width="60px;"/>](https://github.com/Gruman670)
 [<img src="https://github.com/FerRamirez99.png" width="60px;"/>](https://github.com/FerRamirez99)
 
 **Repositorio Backend del proyecto:** 
@@ -18,7 +19,7 @@ Primero se diseñó un prototipo visual simple de la aplicación.
 ![Imagen del prototipo de diseño de la aplicaión](./public/readme/Design.png)
 
 Versión Final:
-<!-- ![Imagen de la aplicaión]()-->
+![Imagen de la aplicaión](./public/readme/final.png)
 
 ## **Features:**
 Para el desarrollo del proyecto se utilizaron diferentes tecnologías, tales como:
