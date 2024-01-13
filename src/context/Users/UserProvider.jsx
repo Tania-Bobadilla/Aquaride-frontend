@@ -1,7 +1,7 @@
 import axiosClient from "../../config/axiosClient"
 
 import UserContext from "./UserContext"
-import userReducer from "./UserReducer"
+import userReducer from "./userReducer"
 
 import { useReducer } from "react"
 import { useNavigate } from "react-router-dom"

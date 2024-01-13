@@ -1,4 +1,3 @@
-/* eslint-disable react/prop-types */
 import './cartStyles.css'
 
 const CartItem = ({ cartItem }) => {
