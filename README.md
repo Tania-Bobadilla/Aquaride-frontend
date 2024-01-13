@@ -60,4 +60,4 @@ El enfoque principal del proyecto es desarrollar una aplicación web, tanto el F
 ## **Demo:**
 A continuación, se presenta un enlace a la demo del proyecto.
 
-<!-- https://super-pika-a4c814.netlify.app/ -->
+https://fabulous-genie-b3ac69.netlify.app/
