@@ -167,6 +167,9 @@ footer .copy {
     font-weight: 900;
     text-transform: uppercase;
 }
+.destacados .custom-carousel-mobile {
+    display: none;
+}
 .destacados .btn-outline-primary {
     margin-top: 10px;
     border-color: #275E63;
@@ -570,4 +573,112 @@ footer .copy {
 }
 .contact .datos .card-text {
     font-size: 16px;
+}
+.contact iframe {
+    width: 500px;
+}
+/*----------------------------------------------------------------------------------*/
+/* ESTILOS MOBILE */
+@media only screen and (max-width: 600px){
+    footer .copy {
+        margin-top: 30px;
+    }
+    /*Error page*/
+    .error-page {
+        padding: 25px;
+    }
+    .error-page h3 {
+        font-size: 48px;
+    }
+    .error-page h4 {
+        font-size: 18px;
+    }
+    .error-page button {
+        width: 80%;
+    }
+    /*Home*/
+    .welcome .carousel-caption h1 {
+        text-align: center;
+    }
+    .welcome .carousel-caption h5 {
+        text-align: center;
+    }
+    .categories .col {
+        margin-bottom: 10px;
+    }
+    .destacados .custom-carousel {
+        display: none;
+    }
+    .destacados .custom-carousel-mobile {
+        display: block;
+    }
+    .destacados .btn-outline-primary {
+        margin-top: 30px;
+    }
+    .about {
+        height: 900px;
+    }
+    .about img {
+        width: 100%;
+    }
+    .services img {
+        height: 15vh;
+        margin-bottom: 20px;
+    }
+    .newsletter .card img{
+        height: 350px;
+    }
+    .newsletter .card-img-overlay {
+        padding: 5vh;
+    }
+    .newsletter .btn-outline-secondary {
+        width: auto;
+    }
+    /*Login*/
+    .form-register .btn-primary {
+        width: 100%;
+    }
+    .login button {
+        width: 100%;
+    }
+    /*Profile*/
+    .profile {
+        padding: 25px;
+    }
+    .profile .card {
+        width: 80vw;
+    }
+    .profile .btn-save {
+        width: 100%;
+    }
+    .profile .btn-outline-secondary {
+        width: 100%;
+    }
+    /*Catalogo*/
+    .catalogo .cat {
+        display: none;
+    }
+    .catalogo .col-md-9 {
+        padding-left: 0;
+    }
+    .catalogo .card {
+        width: auto;
+    }
+    /* Producto*/
+    .product {
+        padding: 25px;
+    }
+    .product .btn-wrap {
+        margin-bottom: 10px;
+    }
+    .product h2 {
+        font-size: 38px;
+    }
+    .product .btn {
+        width: 100%;
+    }
+    /*Contact*/
+    .contact iframe {
+        width: auto;
+    }
 }

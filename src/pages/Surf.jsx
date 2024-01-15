@@ -18,7 +18,7 @@ const Surf = () => {
       <Row>
         <h2>Catálogo de Surf</h2>
 
-        <Col md={3}>
+        <Col md={3} className="cat">
           <h4>Categorías</h4>
           <ButtonGroup vertical>
             <NavLink to="/hombre" className="category"><Button variant="outline-primary" className="first">Hombre</Button></NavLink>

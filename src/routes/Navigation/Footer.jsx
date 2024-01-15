@@ -1,5 +1,5 @@
 import { Col, Row } from 'react-bootstrap'
-import logo from '../../assets/logo.svg'
+import logo from '../../assets/logo-new.png'
 
 import InstagramIcon from '@mui/icons-material/Instagram'
 import FacebookIcon from '@mui/icons-material/Facebook';
@@ -16,21 +16,21 @@ const Footer = () => {
 
       <div>
         <Row>
-          <Col>
+          <Col md={4}>
             {/* Columna 1 */}
             <h6>Información</h6>
             <a href="#"><p>Sobre Nosotros</p></a>
             <a href="#"><p>Despachos</p></a>
             <a href="/contacto"><p>Contacto</p></a>
           </Col>
-          <Col>
+          <Col md={4}>
             {/* Columna 2 */}
             <h6>Ayuda</h6>
             <a href="#"><p>Preguntas Frecuentes</p></a>
             <a href="#"><p>Términos y Condiciones</p></a>
             <a href="#"><p>Politica de Privacidad</p></a>
           </Col>
-          <Col>
+          <Col md={4}>
             {/* Columna 3 */}
             <h6>Redes sociales</h6>
             <Row>

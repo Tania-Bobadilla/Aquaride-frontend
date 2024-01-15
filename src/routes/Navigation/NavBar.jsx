@@ -1,6 +1,6 @@
 import { Button, Nav, Navbar } from "react-bootstrap"
 import { NavLink } from "react-router-dom"
-import logo from '../../assets/logo.svg'
+import logo from '../../assets/logo-new.png'
 
 import AccountCircleIcon from '@mui/icons-material/AccountCircle'
 
