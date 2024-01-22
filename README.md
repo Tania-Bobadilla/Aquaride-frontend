@@ -1,11 +1,12 @@
-Proyecto 5: E-commerce
 # Aquaride
+
+**link:** https://fabulous-genie-b3ac69.netlify.app/
 
 ## **Descripción:**
 El proyecto se enfoca en el desarrollo de una aplicación E-commerce con rutas de home, login/registro, perfil, listado de productos, producto individual, carrito y pasarela de pago; además de desarrollar el backend que se conectará con el front.
 
 Este proyecto fue realizado en un grupo de 4 personas: <br>
-Tania Bobadilla, Ignacio Gomez, Rodrigo Velasquez y Fernanda Ramirez 
+Tania Bobadilla, Ignacio Gómez, Fernanda Ramirez y Rodrigo Velásquez  
 
 [<img src="https://github.com/Tania-Bobadilla.png" width="60px;"/>](https://github.com/Tania-Bobadilla)
 [<img src="https://github.com/IgnacioAndres07.png" width="60px;"/>](https://github.com/IgnacioAndres07)
@@ -57,7 +58,4 @@ El enfoque principal del proyecto es desarrollar una aplicación web, tanto el F
 2. Gestión y flujo de datos en MongoDB.
 3. Seguridad (Autenticación y autorización).
 
-## **Demo:**
-A continuación, se presenta un enlace a la demo del proyecto.
 
-https://fabulous-genie-b3ac69.netlify.app/
